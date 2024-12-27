@@ -4,7 +4,7 @@ import CardInfo from './components/CardInfo'
 
 const Home = () => {
   const data = [
-    { name: 'Antonio', phone: '3434486607' },
+    { name: 'Micaela', phone: '3434486607' },
     { name: 'Juan', phone: '3434486607' },
     { name: 'María', phone: '3434486607' },
     { name: 'Pepe', phone: '3434486607' },
