@@ -22,9 +22,9 @@ const CardInfo = ({ name, phone }: Props) => {
                 <Typography align='left'>
                     {name}
                 </Typography >
-                {/* <Typography align='left'>
+                <Typography align='left'>
                     {phone}
-                </Typography> */}
+                </Typography>
             </Grid>
             <Grid size={12} sx={{
                 // display: 'grid',

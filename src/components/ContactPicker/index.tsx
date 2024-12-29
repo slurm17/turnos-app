@@ -1,14 +1,13 @@
+import { useContactStore } from '@/store/contactStore'
 import React from 'react'
 
 interface Contact {
-  name?: string[];
-  email?: string[];
-  tel?: string[];
-  address?: string[];
-  icon?: string[];
+  name: string
+  tel: string
 }
 
 const ContactPicker: React.FC = () => {
+  const addContact = useContactStore((state) => state.addContact)
   const pickContact = async (): Promise<void> => {
     if ('contacts' in navigator && 'ContactsManager' in window) {
       try {
@@ -17,8 +16,7 @@ const ContactPicker: React.FC = () => {
           ['name', 'tel'],
           { multiple: true }
         )
-        alert(contacts[0])
-        alert(contacts[0].name)
+        addContact({ name: contacts[0].name, phone: contacts[0].tel })
         // Procesa los contactos seleccionados según tus necesidades
       } catch (error) {
         console.error('Error al seleccionar contacto:', error)
