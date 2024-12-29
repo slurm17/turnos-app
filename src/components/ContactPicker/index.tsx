@@ -14,16 +14,17 @@ const ContactPicker: React.FC = () => {
       try {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const contacts: Contact[] = await (navigator.contacts as any).select(
-          ['name', 'email', 'tel'],
-          { multiple: false }
+          ['name', 'tel'],
+          { multiple: true }
         )
-        alert(contacts)
+        alert({ contacts })
         // Procesa los contactos seleccionados según tus necesidades
       } catch (error) {
         console.error('Error al seleccionar contacto:', error)
       }
     } else {
       console.warn('La Contact Picker API no está disponible en este navegador.')
+      alert('Necesitas instalar la aplicación en tu celular, si ya está instalada tu navegador no es compatible con esta función.')
     }
   }
 
