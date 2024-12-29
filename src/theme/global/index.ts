@@ -10,9 +10,6 @@ export const theme = createTheme({
     },
     secondary: {
       main: '#E0C2FF',
-      light: '#F5EBFF',
-      // dark: will be calculated from palette.secondary.main,
-      contrastText: '#47008F',
     },
   },
   components: {
@@ -23,15 +20,18 @@ export const theme = createTheme({
           display: 'flex',
           placeItems: 'center',
           minWidth: '320px',
-          minHeight: '100vh',
+          minHeight: '100vh'
+        },
+        main: {
+          padding: '2rem'
         },
         '#root': {
           display: 'flex',
+          flexDirection: 'column',
           placeItems: 'center',
           textAlign: 'center',
           maxWidth: '1280px',
           margin: '0 auto',
-          padding: '2rem',
           width: '100%'
         },
       },
