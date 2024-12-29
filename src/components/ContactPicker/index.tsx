@@ -17,7 +17,8 @@ const ContactPicker: React.FC = () => {
           ['name', 'tel'],
           { multiple: true }
         )
-        alert({ contacts })
+        alert(contacts[0])
+        alert(contacts[0].name)
         // Procesa los contactos seleccionados según tus necesidades
       } catch (error) {
         console.error('Error al seleccionar contacto:', error)
