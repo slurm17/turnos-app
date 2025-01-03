@@ -1,17 +1,13 @@
 import { Box, Button, Grid2 as Grid, Typography } from '@mui/material'
 import WhatsAppIcon from '@mui/icons-material/WhatsApp'
-interface Props {
-    name: string,
-    phone: string,
-}
+import { Reminder } from '@/types/Contact'
 
-const CardInfo = ({ name, phone }: Props) => {
+const ReminderCard = ({ name, phone, fecha }: Reminder) => {
   console.log('🚀 ~ CardInfo ~ phone:', phone)
   return (
     <Box sx={{
         backgroundColor: '#fff',
         width: '100%',
-        // border: '1px solid black',
         borderRadius: '7px',
         boxShadow: '0px 0px 12px -3px rgba(0,0,0,0.34)'
     }}>
@@ -22,36 +18,25 @@ const CardInfo = ({ name, phone }: Props) => {
                 <Typography align='left'>
                     {name}
                 </Typography >
+            </Grid>
+            {/* <Grid size={12}>
                 <Typography align='left'>
                     {phone}
                 </Typography>
-            </Grid>
+            </Grid> */}
             <Grid size={12} sx={{
                 // display: 'grid',
                 // placeItems: 'center'
             }}>
                 <Typography align='left'>
-                    {'1 Semana'} {' SAB 28 OCT'}
+                    {fecha}
                 </Typography>
-            </Grid>
-            <Grid size={6}>
-                {/* <Box
-                    sx={{
-                        height: '100%',
-                        color: '#fff',
-                        display: 'grid',
-                        placeItems: 'center',
-                        backgroundColor: 'rgb(38, 223, 223)',
-                        borderRadius: '4px'
-                    }}
-                >
-                    <SettingsIcon fontSize={'large'}/>
-                </Box> */}
             </Grid>
             <Grid size={12} sx={{
                 placeItems: 'center'
             }}>
                 <Button
+                    size='small'
                     sx={{
                         height: '100%',
                         width: '100%',
@@ -60,10 +45,10 @@ const CardInfo = ({ name, phone }: Props) => {
                         display: 'grid',
                         placeItems: 'center',
                         backgroundColor: '#4FCE5D',
-                        borderRadius: '4px'
+                        borderRadius: '4px',
                     }}
                 >
-                    <WhatsAppIcon fontSize={'large'}/>
+                    <WhatsAppIcon fontSize={'small'}/>
                 </Button>
             </Grid>
         </Grid>
@@ -71,4 +56,4 @@ const CardInfo = ({ name, phone }: Props) => {
   )
 }
 
-export default CardInfo
+export default ReminderCard

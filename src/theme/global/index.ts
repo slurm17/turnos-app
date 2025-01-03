@@ -1,5 +1,5 @@
 import { createTheme } from '@mui/material/styles'
-
+import { esES } from '@mui/x-date-pickers/locales'
 export const theme = createTheme({
   palette: {
     primary: {
@@ -18,7 +18,7 @@ export const theme = createTheme({
         body: {
           margin: 0,
           display: 'flex',
-          placeItems: 'center',
+          // placeItems: 'center',
           minWidth: '320px',
           minHeight: '100vh'
         },
@@ -37,4 +37,6 @@ export const theme = createTheme({
       },
     },
   },
-})
+},
+esES
+)

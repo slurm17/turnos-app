@@ -1,12 +1,19 @@
 import { BottomNavigation, BottomNavigationAction, Paper } from '@mui/material'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 // interface Props {}
 import RestoreIcon from '@mui/icons-material/Restore'
-// import FavoriteIcon from '@mui/icons-material/Favorite'
+import FavoriteIcon from '@mui/icons-material/Favorite'
 import ArchiveIcon from '@mui/icons-material/Archive'
+import { useNavigate } from 'react-router-dom'
 const BottomNav = () => {
   const [value, setValue] = useState(0)
+  const navigate = useNavigate()
+  const pages = ['/', '/reminder', '/contacts']
+  useEffect(() => {
+    navigate(pages[value])
+  }, [value])
+  
   return (
     <Paper 
       component={'nav'} 
@@ -27,13 +34,12 @@ const BottomNav = () => {
         }}
         showLabels
         value={value}
-        onChange={(event, newValue) => {
-          console.log('🚀 ~ BottomNav ~ newValue:', event)
+        onChange={(_e, newValue) => {
           setValue(newValue)
         }}
       >
-        <BottomNavigationAction label="Home" icon={<RestoreIcon />} />
-        {/* <BottomNavigationAction label="Añadir recordatorio" icon={<FavoriteIcon />} /> */}
+        <BottomNavigationAction label="Pendientes" icon={<RestoreIcon />} />
+        <BottomNavigationAction label="Agregar" icon={<FavoriteIcon />} />
         <BottomNavigationAction label="Contactos" icon={<ArchiveIcon />} />
       </BottomNavigation>
     </Paper>

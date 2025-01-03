@@ -1,18 +1,9 @@
 import { Box } from '@mui/material'
-import CardInfo from './components/CardInfo'
-import ContactPicker from '@/components/ContactPicker'
+import ReminderCard from './components/ReminderCard'
 import { useContactStore } from '@/store/contactStore'
 
-
 const Home = () => {
-  // const data = [
-  //   { name: 'Sivana Del el Canal', phone: '3434486607', fecha: '2025-05-01' },
-  //   { name: 'Juan Pablo Pérez Lorca', phone: '3434486607', fecha: '2025-05-01' },
-  //   { name: 'María Soledad de las Nieves', phone: '3434486607', fecha: '2025-05-01' },
-  //   { name: 'Pepe Mantel de las Acacias', phone: '3434486607', fecha: '2025-05-01' },
-  //   { name: 'Sofía Mesa Sanchez Arriondo', phone: '3434486607' ,fecha: '2025-05-01' }
-  // ]
-  const contacts = useContactStore((state) => state.contacts)
+  const reminder = useContactStore((state) => state.reminder)
   return (
     <Box sx={{
       display: 'flex',
@@ -22,10 +13,9 @@ const Home = () => {
       width: '100%',
       margin: 'auto'
     }}>
-      {contacts.map((contact, i) => 
-        (<CardInfo key={i} {...contact} />)
+      {reminder.map((reminder, i) => 
+        (<ReminderCard key={i} {...reminder} />)
       )}
-      <ContactPicker/>
     </Box>
   )
 }

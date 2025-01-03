@@ -1,7 +1,10 @@
+import ContactPicker from '@/components/ContactPicker'
 
 const AddContact = () => {
   return (
-    <div>AddContact</div>
+    <div>
+      <ContactPicker/>
+    </div>
   )
 }
 
