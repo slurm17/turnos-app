@@ -21,7 +21,7 @@ const AddReminder = () => {
     phone: ''
   })
   const [open, setOpen] = useState(false)
-  const handleClickOpen = () => setOpen(true)
+  const handleClickOpen = () => setOpen(false)
   const handleClose = () => setOpen(false)
   useEffect(() => {
     console.log('Buscando:', contact)
@@ -38,7 +38,6 @@ const AddReminder = () => {
         open={open}
         onClose={handleClose}
       />
-
     </>
     
   )

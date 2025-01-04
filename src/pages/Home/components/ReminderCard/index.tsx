@@ -3,7 +3,6 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp'
 import { Reminder } from '@/types/Contact'
 
 const ReminderCard = ({ name, phone, fecha }: Reminder) => {
-  console.log('🚀 ~ CardInfo ~ phone:', phone)
   return (
     <Box sx={{
         backgroundColor: '#fff',
@@ -19,11 +18,11 @@ const ReminderCard = ({ name, phone, fecha }: Reminder) => {
                     {name}
                 </Typography >
             </Grid>
-            {/* <Grid size={12}>
+            <Grid size={12}>
                 <Typography align='left'>
                     {phone}
                 </Typography>
-            </Grid> */}
+            </Grid>
             <Grid size={12} sx={{
                 // display: 'grid',
                 // placeItems: 'center'

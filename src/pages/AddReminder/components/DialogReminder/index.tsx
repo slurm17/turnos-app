@@ -3,7 +3,7 @@ import Dialog from '@mui/material/Dialog'
 import { Button, Typography } from '@mui/material'
 import { DateCalendar } from '@mui/x-date-pickers'
 import { Contact, Reminder } from '@/types/Contact'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Dayjs } from 'dayjs'
 import dayjs from 'dayjs'
 
@@ -16,21 +16,18 @@ interface SimpleDialogProps {
 export default function SimpleDialog(props: SimpleDialogProps) {
   const { onClose, open, selectedValue, addReminder } = props
   const [value, setValue] = useState<Dayjs>(dayjs())
-  const handleClose = () => {
-    onClose()
-  }
-useEffect(() => {
-  value && console.log(value.format('DD/MM/YYYY'))
-}, [value])
+  const handleClose = () => onClose()
 
-  const handleClick = () => {
-    // onClose()
-    const reminder : Reminder = {
-      name: selectedValue?.name,
-      phone: selectedValue?.phone,
-      fecha: value.format('DD/MM/YYYY')
+  const handleClick = ({ sendReminder = false }) => {
+    if(sendReminder){
+      const reminder : Reminder = {
+        name: selectedValue?.name,
+        phone: selectedValue?.phone,
+        fecha: value.format('DD/MM/YYYY')
+      }
+      addReminder(reminder)
     }
-    addReminder(reminder)
+    onClose()
   }
 
   return (
@@ -43,9 +40,14 @@ useEffect(() => {
           value={value} onChange={(newValue) => setValue(newValue)}
       />
       <Button
-        onClick={handleClick}
+        onClick={() => handleClick({ sendReminder: true })}
       >
         Aceptar
+      </Button>
+      <Button
+        onClick={() => handleClick({ sendReminder: false })}
+      >
+        Cancelar
       </Button>
     </Dialog>
   )
