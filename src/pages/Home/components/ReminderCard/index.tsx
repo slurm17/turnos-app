@@ -1,8 +1,31 @@
 import { Box, Button, Grid2 as Grid, Typography } from '@mui/material'
 import WhatsAppIcon from '@mui/icons-material/WhatsApp'
 import { Reminder } from '@/types/Contact'
+import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 
+  
 const ReminderCard = ({ name, phone, fecha }: Reminder) => {
+    const location = useLocation()
+
+  useEffect(() => {
+    const handleBackButton = (e) => {
+      if (location.pathname === '/') {
+        e.preventDefault()
+        const confirmExit = window.confirm('¿Deseas salir de la aplicación?')
+        if (confirmExit) {
+            window.close()
+          // Lógica adicional para cerrar la aplicación si es posible
+        }
+      }
+    }
+
+    window.addEventListener('popstate', handleBackButton)
+
+    return () => {
+      window.removeEventListener('popstate', handleBackButton)
+    }
+  }, [location])
   return (
     <Box sx={{
         backgroundColor: '#fff',
