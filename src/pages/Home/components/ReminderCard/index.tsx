@@ -9,7 +9,7 @@ const ReminderCard = ({ name, phone, fecha }: Reminder) => {
     const location = useLocation()
 
   useEffect(() => {
-    const handleBackButton = (e) => {
+    const handleBackButton = (e : Event) => {
       if (location.pathname === '/') {
         e.preventDefault()
         const confirmExit = window.confirm('¿Deseas salir de la aplicación?')
