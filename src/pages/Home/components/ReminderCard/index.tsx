@@ -35,6 +35,7 @@ const ReminderCard = ({ name, phone, fecha }: Reminder) => {
                 placeItems: 'center'
             }}>
                 <Button
+                    onClick={() => window.open(`https://wa.me/${phone}`)}
                     size='small'
                     sx={{
                         height: '100%',

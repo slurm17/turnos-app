@@ -1,55 +1,57 @@
 
-import Dialog from '@mui/material/Dialog'
-import { Button, Typography } from '@mui/material'
+import { Button, Grid2, Typography } from '@mui/material'
 import { DateCalendar } from '@mui/x-date-pickers'
 import { Contact, Reminder } from '@/types/Contact'
 import { useState } from 'react'
 import { Dayjs } from 'dayjs'
 import dayjs from 'dayjs'
+import { useNavigate } from 'react-router-dom'
 
 interface SimpleDialogProps {
-  open: boolean
-  selectedValue: Contact
-  onClose: () => void,
+  selectedValue: Contact | null
   addReminder: (reminder: Reminder) => void
 }
 export default function SimpleDialog(props: SimpleDialogProps) {
-  const { onClose, open, selectedValue, addReminder } = props
+  const { selectedValue, addReminder } = props
   const [value, setValue] = useState<Dayjs>(dayjs())
-  const handleClose = () => onClose()
-
-  const handleClick = ({ sendReminder = false }) => {
-    if(sendReminder){
-      const reminder : Reminder = {
-        name: selectedValue?.name,
-        phone: selectedValue?.phone,
+  const navigate = useNavigate()
+  const handleClickAceptar = () => {
+    selectedValue && addReminder({
+        name: selectedValue.name,
+        phone: selectedValue.phone,
         fecha: value.format('DD/MM/YYYY')
-      }
-      addReminder(reminder)
-    }
-    onClose()
+      })
+      navigate('/')
   }
 
   return (
-    <Dialog onClose={handleClose} open={open}>
-      <Typography>{selectedValue?.name || 'nombre'}</Typography>
-      <Typography>{selectedValue?.phone || 'telefono'}</Typography>
-      <Typography>{value && value.format('DD/MM/YYYY')}</Typography>
+    <>
       <DateCalendar
-          disablePast
-          value={value} onChange={(newValue) => setValue(newValue)}
+        disablePast
+        value={value} 
+        onChange={(newValue) => setValue(newValue)}
       />
-      <Button
-        onClick={() => handleClick({ sendReminder: true })}
-      >
-        Aceptar
-      </Button>
-      <Button
-        onClick={() => handleClick({ sendReminder: false })}
-      >
-        Cancelar
-      </Button>
-    </Dialog>
+      <Typography>{selectedValue?.phone}</Typography>
+      <Typography>Fecha: {value.format('DD/MM/YYYY')}</Typography>
+      <Grid2 container columnSpacing={2} mt={2}>
+        <Grid2 size={6}>
+          <Button
+            variant='contained'
+            // onClick={onClose}
+            >
+            {'Cancelar'}
+          </Button>
+        </Grid2>
+        <Grid2 size={6}>
+          <Button
+            variant='contained'
+            onClick={handleClickAceptar}
+            >
+            {'Aceptar'}
+          </Button>
+        </Grid2>
+      </Grid2>
+    </>
   )
 }
 

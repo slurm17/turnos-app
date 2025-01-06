@@ -1,19 +1,25 @@
 import { BottomNavigation, BottomNavigationAction, Paper } from '@mui/material'
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 
 // interface Props {}
 import RestoreIcon from '@mui/icons-material/Restore'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import ArchiveIcon from '@mui/icons-material/Archive'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 const BottomNav = () => {
   const [value, setValue] = useState(0)
   const navigate = useNavigate()
-  const pages = ['/', '/reminder', '/contacts']
+  const location = useLocation()
+  const pages = useMemo(() => {
+    return ['/', '/reminder', '/contacts']
+  }, [])
+
+  useEffect(() => {
+    setValue(pages.indexOf(location.pathname))
+  }, [location.pathname, pages])
   useEffect(() => {
     navigate(pages[value])
-  }, [value])
-  
+  }, [value, navigate, pages])
   return (
     <Paper 
       component={'nav'} 

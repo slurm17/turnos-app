@@ -5,7 +5,7 @@ const Layout = () => {
   return (
     <>
       <Box component='main' sx={{
-        marginBottom: { xs: '56px', sm: '0px' }
+        // marginBottom: { xs: '56px', sm: '0px' },
       }}>
         <Outlet/>
       </Box>

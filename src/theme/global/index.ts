@@ -1,9 +1,8 @@
 import { createTheme } from '@mui/material/styles'
-import { esES } from '@mui/x-date-pickers/locales'
 export const theme = createTheme({
   palette: {
     primary: {
-      main: '#FF5733',
+      main: '#1126db',
       // light: will be calculated from palette.primary.main,
       // dark: will be calculated from palette.primary.main,
       // contrastText: will be calculated to contrast with palette.primary.main
@@ -16,27 +15,28 @@ export const theme = createTheme({
     MuiCssBaseline: {
       styleOverrides: {
         body: {
-          margin: 0,
-          display: 'flex',
           // placeItems: 'center',
+          margin: 0,
+          // display: 'flex',
           minWidth: '320px',
-          minHeight: '100vh'
-        },
-        main: {
-          padding: '2rem'
+          minHeight: '100vh',
+          // backgroundColor: 'yellow'
         },
         '#root': {
+          maxWidth: '1280px',
+          margin: '0 auto',
+          width: '100%',
+        },
+        main: {
           display: 'flex',
           flexDirection: 'column',
           placeItems: 'center',
           textAlign: 'center',
-          maxWidth: '1280px',
-          margin: '0 auto',
+          padding: '1.75rem 1rem 70px 1rem',
           width: '100%'
         },
       },
     },
   },
-},
-esES
+}
 )
