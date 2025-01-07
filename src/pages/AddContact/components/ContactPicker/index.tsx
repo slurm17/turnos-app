@@ -10,7 +10,7 @@ const ContactPicker = () => {
           ['name', 'tel'],
           { multiple: true }
         )
-        addContact({ name: contacts[0].name, phone: contacts[0].tel })
+        addContact({ name: contacts[0]?.name[0], phone: contacts[0]?.tel[0] })
         // Procesa los contactos seleccionados según tus necesidades
       } catch (error) {
         console.error('Error al seleccionar contacto:', error)
