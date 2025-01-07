@@ -1,8 +1,8 @@
 import { Box, Button, Grid2 as Grid, Typography } from '@mui/material'
 import WhatsAppIcon from '@mui/icons-material/WhatsApp'
-import { Reminder } from '@/types/Contact'
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
+import { Reminder } from '@/types/Reminder'
 
   
 const ReminderCard = ({ name, phone, fecha }: Reminder) => {

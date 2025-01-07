@@ -15,19 +15,10 @@ const emptyContact: Contact = {
 //     { name: 'Pepe Mantel de las Acacias', phone: '3434486600' },
 //     { name: 'Sofía Mesa Sanchez Arriondo', phone: '3434486605' }
 //   ]
-const isContactEmpty = (contact: Contact): boolean => {
-  return contact.name.trim() === '' && contact.phone.trim() === ''
+const isContactEmpty = ({ name }: Contact): boolean => {
+  return name.trim() === ''
 }
-// const isObjectEmpty = (obj: Record<string, any>): boolean => {
-//   return Object.values(obj).every(
-//     (value) =>
-//       value === null ||
-//       value === undefined ||
-//       (typeof value === 'string' && value.trim() === '') ||
-//       (Array.isArray(value) && value.length === 0) ||
-//       (typeof value === 'object' && !Array.isArray(value) && isObjectEmpty(value))
-//   )
-// }
+
 const AddReminder = () => {
   const { contacts, addReminder } = useContactStore(useShallow((state) => ({
     contacts: state.contacts,

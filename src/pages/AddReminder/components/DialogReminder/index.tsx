@@ -1,11 +1,12 @@
 
 import { Button, Grid2, Typography } from '@mui/material'
 import { DateCalendar } from '@mui/x-date-pickers'
-import { Contact, Reminder } from '@/types/Contact'
+import { Contact } from '@/types/Contact'
 import { useState } from 'react'
 import { Dayjs } from 'dayjs'
 import dayjs from 'dayjs'
 import { useNavigate } from 'react-router-dom'
+import { Reminder } from '@/types/Reminder'
 
 interface SimpleDialogProps {
   selectedValue: Contact | null

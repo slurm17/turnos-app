@@ -1,4 +1,5 @@
-import { Contact, Reminder } from '@/types/Contact'
+import { Contact } from '@/types/Contact'
+import { Reminder } from '@/types/Reminder'
 import { create } from 'zustand'
 import { persist, createJSONStorage } from 'zustand/middleware'
 

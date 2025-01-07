@@ -1,4 +1,4 @@
-import ContactPicker from '@/components/ContactPicker'
+import ContactPicker from '@/pages/AddContact/components/ContactPicker'
 
 const AddContact = () => {
   return (
