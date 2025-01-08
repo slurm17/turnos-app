@@ -1,9 +1,14 @@
-import { Box } from '@mui/material'
+import { Alert, Box } from '@mui/material'
 import ReminderCard from './components/ReminderCard'
 import { useContactStore } from '@/store/contactStore'
 
 const Home = () => {
   const reminder = useContactStore((state) => state.reminder)
+  if(reminder.length === 0){
+    return(
+      <Alert severity="info">No hay recordatorios agendados</Alert>
+    )
+  }
   return (
     <Box sx={{
       display: 'flex',
