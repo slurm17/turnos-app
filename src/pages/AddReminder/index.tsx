@@ -30,7 +30,7 @@ const AddReminder = () => {
     <>
       {/* <Box>AddReminder</Box> */}
       <SearchBar contacts={contacts} setContact={setContact} contact={contact} />
-      {contacts.map(c=>{
+      {/* {contacts.map(c=>{
         return(
           <ul>
             <li>
@@ -38,7 +38,7 @@ const AddReminder = () => {
             </li>
           </ul>
         )
-      })}
+      })} */}
       {!isContactEmpty(contact) &&
         <SimpleDialogDemo
           selectedValue={contact}
