@@ -1,52 +1,51 @@
-import { useState } from 'react'
-import SearchBar from './components/SearchBar'
-import SimpleDialogDemo from './components/DialogReminder'
+import { useLocation, useNavigate } from 'react-router-dom'
+import { Button, Grid2, Typography } from '@mui/material'
+import { DateCalendar } from '@mui/x-date-pickers'
 import { Contact } from '@/types/Contact'
-import { useContactStore } from '@/store/contactStore'
-import { useShallow } from 'zustand/shallow'
-const emptyContact: Contact = {
-  name: '',
-  phone: '',
-}
-// const contacts: Contact[] = [
-//     { name: 'Sivana Del el Canal', phone: '3434486607' },
-//     { name: 'Juan Pablo Pérez Lorca', phone: '3434486608' },
-//     { name: 'María Soledad de las Nieves', phone: '3434486609' },
-//     { name: 'Pepe Mantel de las Acacias', phone: '3434486600' },
-//     { name: 'Sofía Mesa Sanchez Arriondo', phone: '3434486605' }
-//   ]
-const isContactEmpty = ({ name }: Contact): boolean => {
-  return name.trim() === ''
-}
-
-const AddReminder = () => {
-  const { contacts, addReminder } = useContactStore(useShallow((state) => ({
-    contacts: state.contacts,
-    addReminder: state.addReminder
-  })))
-  const [contact, setContact] = useState<Contact>(emptyContact)
-  
+import { useState } from 'react'
+import { Dayjs } from 'dayjs'
+import dayjs from 'dayjs'
+import * as ROUTES from '@/constants/routes'
+import { useReminderStore } from '@/store/reminderStore'
+const AddReminder = () => { 
+  const [date, setDate] = useState<Dayjs>(dayjs())
+  const location = useLocation()
+  const addReminder = useReminderStore(state => state.addReminder)
+  const navigate = useNavigate()
+  const { contact: { name, phone } } = location.state as { contact: Contact } 
+  const handleClickAceptar = () => {
+    addReminder({ name, phone, fecha: date })
+    navigate(ROUTES.REMINDER)
+  }
   return (
-    <>
-      {/* <Box>AddReminder</Box> */}
-      <SearchBar contacts={contacts} setContact={setContact} contact={contact} />
-      {/* {contacts.map(c=>{
-        return(
-          <ul>
-            <li>
-            {JSON.stringify(c)}
-            </li>
-          </ul>
-        )
-      })} */}
-      {!isContactEmpty(contact) &&
-        <SimpleDialogDemo
-          selectedValue={contact}
-          addReminder={addReminder}
-        />
-      }
-    </>
-    
+    <div>
+        <Typography>Nombre: {name}</Typography>
+        <Typography>Teléfono: {phone}</Typography>
+        <DateCalendar
+        disablePast
+        value={date} 
+        onChange={(newValue) => setDate(newValue)}
+      />
+      <Typography>Fecha: {date.format('DD/MM/YYYY')}</Typography>
+      <Grid2 container columnSpacing={2} mt={2}>
+        <Grid2 size={6}>
+          <Button
+            variant='outlined'
+            onClick={()=>navigate(ROUTES.CONTACT_LIST)}
+            >
+            {'Cancelar'}
+          </Button>
+        </Grid2>
+        <Grid2 size={6}>
+          <Button
+            variant='contained'
+            onClick={handleClickAceptar}
+            >
+            {'Aceptar'}
+          </Button>
+        </Grid2>
+      </Grid2>
+    </div>
   )
 }
 

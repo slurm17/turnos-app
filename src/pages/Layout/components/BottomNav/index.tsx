@@ -1,35 +1,25 @@
 import { BottomNavigation, BottomNavigationAction, Paper } from '@mui/material'
-import { useEffect, useMemo, useState } from 'react'
-
-// interface Props {}
+import { useState } from 'react'
 import RestoreIcon from '@mui/icons-material/Restore'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import ArchiveIcon from '@mui/icons-material/Archive'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import * as ROUTES from '@/constants/routes'
 const BottomNav = () => {
   const [value, setValue] = useState(0)
   const navigate = useNavigate()
-  const location = useLocation()
-  const pages = useMemo(() => {
-    return ['/', '/reminder', '/contacts']
-  }, [])
+  const pages = [ROUTES.REMINDER, ROUTES.CONTACT_LIST, ROUTES.CONTACT_ADD]
 
-  useEffect(() => {
-    setValue(pages.indexOf(location.pathname))
-  }, [location.pathname, pages])
-  useEffect(() => {
-    navigate(pages[value])
-  }, [value, navigate, pages])
   return (
-    <Paper 
-      component={'nav'} 
-      sx={{ 
-        position: 'fixed', 
-        bottom: 0, 
-        left: 0, 
-        right: 0, 
-        display: { sm: 'none' } 
-      }} 
+    <Paper
+      component={'nav'}
+      sx={{
+        position: 'fixed',
+        bottom: 0,
+        left: 0,
+        right: 0,
+        display: { sm: 'none' }
+      }}
       elevation={3}
     >
       <BottomNavigation
@@ -42,6 +32,7 @@ const BottomNav = () => {
         value={value}
         onChange={(_e, newValue) => {
           setValue(newValue)
+          navigate(pages[newValue])
         }}
       >
         <BottomNavigationAction label="Pendientes" icon={<RestoreIcon />} />

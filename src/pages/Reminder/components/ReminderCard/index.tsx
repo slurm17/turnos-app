@@ -1,31 +1,10 @@
 import { Box, Button, Grid2 as Grid, Typography } from '@mui/material'
 import WhatsAppIcon from '@mui/icons-material/WhatsApp'
-import { useEffect } from 'react'
-import { useLocation } from 'react-router-dom'
 import { Reminder } from '@/types/Reminder'
+// import dayjs from 'dayjs'
 
   
 const ReminderCard = ({ name, phone, fecha }: Reminder) => {
-    const location = useLocation()
-
-  useEffect(() => {
-    const handleBackButton = (e : Event) => {
-      if (location.pathname === '/') {
-        e.preventDefault()
-        const confirmExit = window.confirm('¿Deseas salir de la aplicación?')
-        if (confirmExit) {
-            window.close()
-          // Lógica adicional para cerrar la aplicación si es posible
-        }
-      }
-    }
-
-    window.addEventListener('popstate', handleBackButton)
-
-    return () => {
-      window.removeEventListener('popstate', handleBackButton)
-    }
-  }, [location])
   return (
     <Box sx={{
         backgroundColor: '#fff',
@@ -46,12 +25,10 @@ const ReminderCard = ({ name, phone, fecha }: Reminder) => {
                     {phone}
                 </Typography>
             </Grid>
-            <Grid size={12} sx={{
-                // display: 'grid',
-                // placeItems: 'center'
-            }}>
+            <Grid size={12}>
                 <Typography align='left'>
-                    {fecha}
+                    {/* {dayjs(fecha).format('DD/MM/YYYY')} */}
+                    {fecha.format('DD/MM/YYYY')}
                 </Typography>
             </Grid>
             <Grid size={12} sx={{
@@ -63,15 +40,13 @@ const ReminderCard = ({ name, phone, fecha }: Reminder) => {
                     sx={{
                         height: '100%',
                         width: '100%',
-                        maxWidth: '100px',
+                        maxWidth: '200px',
                         color: '#fff',
-                        display: 'grid',
-                        placeItems: 'center',
                         backgroundColor: '#4FCE5D',
                         borderRadius: '4px',
                     }}
-                >
-                    <WhatsAppIcon fontSize={'small'}/>
+                    endIcon={<WhatsAppIcon fontSize={'small'}/>}
+                >   {'Enviar mensaje'}
                 </Button>
             </Grid>
         </Grid>

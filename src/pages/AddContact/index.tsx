@@ -4,12 +4,13 @@ import { Contact } from '@/types/Contact'
 import { Button, TextField } from '@mui/material'
 import { useState } from 'react'
 import { handleFileUpload } from './components/ReadFile'
+import { useReminderStore } from '@/store/reminderStore'
 
 const AddContact = () => {
   const clearContacts = useContactStore((state) => state.clearContacts)
   const addContact = useContactStore((state) => state.addContact)
   const addContacts = useContactStore((state) => state.addContacts)
-  const clearReminder = useContactStore((state) => state.clearReminder)
+  const clearReminder = useReminderStore((state) => state.clearReminder)
 
   const [datos, setDatos] = useState<Contact>({
     name: '',

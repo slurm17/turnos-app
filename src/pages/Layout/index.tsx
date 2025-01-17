@@ -4,9 +4,7 @@ import { Outlet } from 'react-router-dom'
 const Layout = () => {
   return (
     <>
-      <Box component='main' sx={{
-        // marginBottom: { xs: '56px', sm: '0px' },
-      }}>
+      <Box component='main'>
         <Outlet/>
       </Box>
       <BottomNav/>

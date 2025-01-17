@@ -1,3 +1,4 @@
 export const REMINDER = '/'
-export const SEARCH = '/search'
-export const CONTACT = '/contact'
+export const REMINDER_ADD = '/reminder/add'
+export const CONTACT_LIST = '/contact/list'
+export const CONTACT_ADD = '/contact/add'

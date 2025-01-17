@@ -1,5 +1,7 @@
+import { Dayjs } from 'dayjs'
 import { Contact } from '../Contact'
 
 export type Reminder = Contact & {
-    fecha: string
+    fecha: Dayjs,
+    note?: string
 } 
