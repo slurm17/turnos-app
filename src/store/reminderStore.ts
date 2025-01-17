@@ -18,10 +18,10 @@ export const useReminderStore = create<ReminderState>()(
       addReminder: (newReminder) => {
         const reminderWithDayjs: Reminder = {
             ...newReminder,
-            fecha: dayjs(newReminder.fecha), // Convierte la fecha a Dayjs
+            fecha: dayjs(newReminder.fecha, 'DD/MM/YYYY'), // Convierte la fecha a Dayjs
         }
         set((state)=>({
-          reminder: [...state.reminder, reminderWithDayjs]
+          reminder: [...state.reminder, reminderWithDayjs].sort((a, b) => a.fecha.diff(b.fecha))
         }))
       },
       clearReminder: () => set({ reminder: [] })

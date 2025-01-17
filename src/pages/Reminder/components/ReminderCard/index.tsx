@@ -12,7 +12,7 @@ const ReminderCard = ({ name, phone, fecha }: Reminder) => {
         borderRadius: '7px',
         boxShadow: '0px 0px 12px -3px rgba(0,0,0,0.34)'
     }}>
-        <Grid container rowSpacing={1} columnSpacing={1} sx={{
+        <Grid container rowSpacing={.25} columnSpacing={1} sx={{
                 padding: 1,
             }}>
             <Grid size={12}>
@@ -28,7 +28,7 @@ const ReminderCard = ({ name, phone, fecha }: Reminder) => {
             <Grid size={12}>
                 <Typography align='left'>
                     {/* {dayjs(fecha).format('DD/MM/YYYY')} */}
-                    {fecha.format('DD/MM/YYYY')}
+                    {fecha.toString()}
                 </Typography>
             </Grid>
             <Grid size={12} sx={{
