@@ -9,7 +9,6 @@ const ListContact = () => {
   // const addReminder = useReminderStore(state => state.addReminder)
   const navigate = useNavigate()
   // const [contact, setContact] = useState<Contact>(emptyContact)
-  console.log('hola')
   if(ContactUtils.isContactsEmpty(contacts))
     return(
       <Alert severity="info">No hay contactos agregados</Alert>

@@ -7,6 +7,7 @@ import { Dayjs } from 'dayjs'
 import dayjs from 'dayjs'
 import * as ROUTES from '@/constants/routes'
 import { useReminderStore } from '@/store/reminderStore'
+import { format } from 'date-fns'
 const AddReminder = () => { 
   const [date, setDate] = useState<Dayjs>(dayjs())
   const location = useLocation()
@@ -14,19 +15,22 @@ const AddReminder = () => {
   const navigate = useNavigate()
   const { contact: { name, phone } } = location.state as { contact: Contact } 
   const handleClickAceptar = () => {
-    addReminder({ name, phone, fecha: date })
+    addReminder({ name, phone, date: format(date.toString(), 'dd/MM/yyyy') })
     navigate(ROUTES.REMINDER)
+  }
+  const handleChangeCalendar = (newValue : Dayjs) => {
+    setDate(newValue)
   }
   return (
     <div>
-        <Typography>Nombre: {name}</Typography>
-        <Typography>Teléfono: {phone}</Typography>
+        <Typography>{name || 'NOMBRE'}</Typography>
+        <Typography>{phone || 'TELEFONO'}</Typography>
         <DateCalendar
-        disablePast
-        value={date} 
-        onChange={(newValue) => setDate(newValue)}
-      />
-      <Typography>Fecha: {date.format('DD/MM/YYYY')}</Typography>
+          disablePast
+          value={date} 
+          onChange={handleChangeCalendar}
+        />
+      <Typography>Fecha: {format(date.toString(), 'dd/MM/yyyy')}</Typography>
       <Grid2 container columnSpacing={2} mt={2}>
         <Grid2 size={6}>
           <Button

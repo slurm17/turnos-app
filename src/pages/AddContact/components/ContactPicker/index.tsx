@@ -1,7 +1,8 @@
-import { useContactStore } from '@/store/contactStore'
-
-const ContactPicker = () => {
-  const addContact = useContactStore((state) => state.addContact)
+import { Button } from '@mui/material'
+interface ContactPickerProps {
+  addContact: ({ name, phone }: {name: string, phone: string}) => void
+}
+const ContactPicker = ({ addContact } : ContactPickerProps) => {
   const pickContact = async (): Promise<void> => {
     if ('contacts' in navigator && 'ContactsManager' in window) {
       try {
@@ -22,9 +23,9 @@ const ContactPicker = () => {
   }
 
   return (
-    <button onClick={pickContact}>
-      Seleccionar Contacto
-    </button>
+    <Button fullWidth variant='contained' onClick={pickContact}>
+      Seleccionar contacto desde tu teléfono
+    </Button>
   )
 }
 

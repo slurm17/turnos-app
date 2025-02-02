@@ -1,8 +1,8 @@
 import { BottomNavigation, BottomNavigationAction, Paper } from '@mui/material'
 import { useState } from 'react'
-import RestoreIcon from '@mui/icons-material/Restore'
-import FavoriteIcon from '@mui/icons-material/Favorite'
-import ArchiveIcon from '@mui/icons-material/Archive'
+import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1'
+import DateRangeIcon from '@mui/icons-material/DateRange'
+import PersonIcon from '@mui/icons-material/Person'
 import { useNavigate } from 'react-router-dom'
 import * as ROUTES from '@/constants/routes'
 const BottomNav = () => {
@@ -35,9 +35,9 @@ const BottomNav = () => {
           navigate(pages[newValue])
         }}
       >
-        <BottomNavigationAction label="Pendientes" icon={<RestoreIcon />} />
-        <BottomNavigationAction label="Agregar" icon={<FavoriteIcon />} />
-        <BottomNavigationAction label="Contactos" icon={<ArchiveIcon />} />
+        <BottomNavigationAction label="Turnos" icon={<DateRangeIcon />} />
+        <BottomNavigationAction label="Contactos" icon={<PersonIcon />} />
+        <BottomNavigationAction label="Añadir" icon={<PersonAddAlt1Icon />} />
       </BottomNavigation>
     </Paper>
   )

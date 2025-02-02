@@ -4,7 +4,7 @@ import { Reminder } from '@/types/Reminder'
 // import dayjs from 'dayjs'
 
   
-const ReminderCard = ({ name, phone, fecha }: Reminder) => {
+const ReminderCard = ({ name, phone, date }: Reminder) => {
   return (
     <Box sx={{
         backgroundColor: '#fff',
@@ -27,8 +27,7 @@ const ReminderCard = ({ name, phone, fecha }: Reminder) => {
             </Grid>
             <Grid size={12}>
                 <Typography align='left'>
-                    {/* {dayjs(fecha).format('DD/MM/YYYY')} */}
-                    {fecha.toString()}
+                    {date}
                 </Typography>
             </Grid>
             <Grid size={12} sx={{
