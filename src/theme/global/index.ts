@@ -26,6 +26,7 @@ export const theme = createTheme({
           maxWidth: '1280px',
           margin: '0 auto',
           width: '100%',
+          display: 'flex'
         },
         main: {
           display: 'flex',

@@ -1,14 +1,15 @@
 import { BottomNavigation, BottomNavigationAction, Paper } from '@mui/material'
 import { useState } from 'react'
-import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1'
-import DateRangeIcon from '@mui/icons-material/DateRange'
-import PersonIcon from '@mui/icons-material/Person'
 import { useNavigate } from 'react-router-dom'
-import * as ROUTES from '@/constants/routes'
-const BottomNav = () => {
+import { ListItemsNav } from '../../types/ListItemsNav'
+interface BottomNavProps {
+  listItemsNav: ListItemsNav[]
+}
+const BottomNav = ({ listItemsNav }:BottomNavProps) => {
   const [value, setValue] = useState(0)
   const navigate = useNavigate()
-  const pages = [ROUTES.REMINDER, ROUTES.CONTACT_LIST, ROUTES.CONTACT_ADD]
+  const pages : string[] = []
+  pages.push(...listItemsNav.map((item) => (item.navigateTo)))
 
   return (
     <Paper
@@ -35,9 +36,13 @@ const BottomNav = () => {
           navigate(pages[newValue])
         }}
       >
-        <BottomNavigationAction label="Turnos" icon={<DateRangeIcon />} />
-        <BottomNavigationAction label="Contactos" icon={<PersonIcon />} />
-        <BottomNavigationAction label="Añadir" icon={<PersonAddAlt1Icon />} />
+        {listItemsNav.map(({ text, icon: Icon }, i) => (
+          <BottomNavigationAction 
+            key={i} 
+            label={text} 
+            icon={<Icon/>} 
+          />
+        ))}
       </BottomNavigation>
     </Paper>
   )
