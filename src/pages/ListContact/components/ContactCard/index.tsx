@@ -1,4 +1,5 @@
-import { Box, Typography } from '@mui/material'
+import { ListItemShadow } from '@/styles/components/Shadow'
+import { ListItemButton, ListItemText } from '@mui/material'
 
 interface ContactCardProps {
     phone: string,
@@ -8,10 +9,11 @@ interface ContactCardProps {
 
 const ContactCard = ({ name, phone, ...props }: ContactCardProps) => {
   return (
-    <Box {...props}>
-        <Typography>{name}</Typography>
-        <Typography>{phone}</Typography>
-    </Box>
+    <ListItemShadow disablePadding {...props}>
+      <ListItemButton>
+        <ListItemText primary={`${name} ${phone}` }/>
+      </ListItemButton>
+    </ListItemShadow>
   )
 }
 

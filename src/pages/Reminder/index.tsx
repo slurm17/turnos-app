@@ -1,4 +1,4 @@
-import { Alert, Box } from '@mui/material'
+import { Alert, List } from '@mui/material'
 import ReminderCard from './components/ReminderCard'
 import { useReminderStore } from '@/store/reminderStore'
 
@@ -11,7 +11,7 @@ const Reminder = () => {
     )
 
   return (
-    <Box sx={{
+    <List sx={{
       display: 'flex',
       flexDirection: 'column',
       gap: '20px',
@@ -22,7 +22,7 @@ const Reminder = () => {
       {reminder.map((reminder, i) => 
         (<ReminderCard key={i} {...reminder} />)
       )}
-    </Box>
+    </List>
   )
 }
 
