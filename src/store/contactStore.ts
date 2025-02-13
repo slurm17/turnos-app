@@ -11,7 +11,7 @@ interface ContactState {
 }
 
 // Creación del store con persistencia
-export const useContactStore = create<ContactState>()(
+const useContactStore = create<ContactState>()(
   persist(
     (set) => ({
       contacts: [],
@@ -31,3 +31,6 @@ export const useContactStore = create<ContactState>()(
     }
   )
 )
+
+export default useContactStore
+

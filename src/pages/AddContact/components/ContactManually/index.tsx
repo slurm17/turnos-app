@@ -1,3 +1,4 @@
+import { ButtonShadow } from '@/styles/components/Shadow'
 import { Contact } from '@/types/Contact'
 import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField } from '@mui/material'
 import { useState } from 'react'
@@ -65,14 +66,12 @@ const ContactManually = ({ addContact } : ContactManuallyProps) => {
           <Button type="submit">Aceptar</Button>
         </DialogActions>
       </Dialog>
-      <Button 
-      fullWidth
-        variant='contained' 
-        // onClick={()=> addContact({ name: datos.name, phone: datos.phone })}
+      <ButtonShadow 
+        fullWidth
         onClick={()=>setOpen(true)}
       >
         Agregar contacto manualmente
-      </Button>
+      </ButtonShadow>
     </>
   )
 }

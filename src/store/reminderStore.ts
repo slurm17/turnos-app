@@ -17,7 +17,7 @@ interface ReminderState {
   }
 
 // Creación del store con persistencia
-export const useReminderStore = create<ReminderState>()(
+const useReminderStore = create<ReminderState>()(
   persist(
     (set) => ({
       reminder: [],
@@ -35,3 +35,5 @@ export const useReminderStore = create<ReminderState>()(
     }
   )
 )
+
+export default useReminderStore

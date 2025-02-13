@@ -1,7 +1,8 @@
-import { Box, Button } from '@mui/material'
+import { Box } from '@mui/material'
 import { handleFileUpload } from './ReadFile'
 import { Contact } from '@/types/Contact'
 import { useRef } from 'react'
+import { ButtonShadow } from '@/styles/components/Shadow'
 
 interface ContactFileProps {
     addContacts: (contacts : Contact[]) => void
@@ -23,7 +24,11 @@ interface ContactFileProps {
             accept=".vcf"
             onChange={(e) => handleFileUpload(e,addContacts)}
         />
-        <Button fullWidth variant='contained' onClick={handleFileClick}>Importar archivo .vcf</Button>
+        <ButtonShadow 
+          fullWidth 
+          onClick={handleFileClick}>
+            Importar archivo .vcf
+        </ButtonShadow>
     </>
   )
 }

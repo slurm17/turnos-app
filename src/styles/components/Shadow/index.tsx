@@ -1,4 +1,4 @@
-import { Box, ListItem, styled } from '@mui/material'
+import { Box, Button, ListItem, styled } from '@mui/material'
 
 const ShadowStyles = `
     background-color: #fff;
@@ -14,6 +14,11 @@ export const BoxShadow = styled(Box)(
 export const ListItemShadow = styled(ListItem)(
     `${ShadowStyles}`
 )
+
+export const ButtonShadow = styled(Button)(
+    `${ShadowStyles}`
+)
+
 
 // En el caso de querer agregar mas estilos
 

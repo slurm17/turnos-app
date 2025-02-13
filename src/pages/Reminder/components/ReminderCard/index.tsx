@@ -1,4 +1,4 @@
-import { Button, Grid2 as Grid, ListItemButton, Typography } from '@mui/material'
+import { Button, ListItemButton, Typography } from '@mui/material'
 import WhatsAppIcon from '@mui/icons-material/WhatsApp'
 import { Reminder } from '@/types/Reminder'
 import { ListItemShadow } from '@/styles/components/Shadow'

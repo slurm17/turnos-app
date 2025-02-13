@@ -6,8 +6,8 @@ import { useState } from 'react'
 import { Dayjs } from 'dayjs'
 import dayjs from 'dayjs'
 import * as ROUTES from '@/constants/routes'
-import { useReminderStore } from '@/store/reminderStore'
 import { format } from 'date-fns'
+import { useReminderStore } from '@/store'
 const AddReminder = () => { 
   const [date, setDate] = useState<Dayjs>(dayjs())
   const location = useLocation()

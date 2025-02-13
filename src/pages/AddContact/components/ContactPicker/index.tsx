@@ -1,4 +1,4 @@
-import { Button } from '@mui/material'
+import { ButtonShadow } from '@/styles/components/Shadow'
 interface ContactPickerProps {
   addContact: ({ name, phone }: {name: string, phone: string}) => void
 }
@@ -23,9 +23,9 @@ const ContactPicker = ({ addContact } : ContactPickerProps) => {
   }
 
   return (
-    <Button fullWidth variant='contained' onClick={pickContact}>
+    <ButtonShadow fullWidth onClick={pickContact}>
       Seleccionar contacto desde tu teléfono
-    </Button>
+    </ButtonShadow>
   )
 }
 
