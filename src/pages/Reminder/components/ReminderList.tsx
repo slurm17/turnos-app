@@ -1,5 +1,5 @@
-import { List } from '@mui/material'
-import ReminderCard from '../ReminderCard'
+import { Stack } from '@mui/material'
+import ReminderCard from './ReminderCard'
 import { Reminder } from '@/types/Reminder'
 
 interface ReminderListProps {
@@ -8,18 +8,11 @@ interface ReminderListProps {
 
 const ReminderList = ({ reminder }: ReminderListProps) => {
   return (
-    <List sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '20px',
-        maxWidth: '500px',
-        width: '100%',
-        margin: 'auto'
-      }}>
+    <Stack component={'ul'} p={0} spacing={1.5}>
         {reminder.map((reminder, i) => 
           (<ReminderCard key={i} {...reminder} />)
         )}
-      </List>
+    </Stack>
   )
 }
 

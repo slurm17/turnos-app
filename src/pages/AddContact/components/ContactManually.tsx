@@ -1,4 +1,4 @@
-import { ButtonShadow } from '@/styles/components/Shadow'
+import { ButtonShadow } from '@/styles/Shadow'
 import { Contact } from '@/types/Contact'
 import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField } from '@mui/material'
 import { useState } from 'react'

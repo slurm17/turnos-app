@@ -1,14 +1,13 @@
-import BottomNav from '@/pages/Layout/components/BottomNav'
 import { Box } from '@mui/material'
 import { Outlet } from 'react-router-dom'
-import DrawerNav from './components/DrawerNav'
-import { listItemsNav } from './types/ListItemsNav'
+import { listItemsNav } from './constants/listItemsNav'
+import DrawerNav from './DrawerNav'
+import BottomNav from './BottomNav'
 
 const Layout = () => {
   return (
     <>
       <DrawerNav listItemsNav={listItemsNav}/>
-      {/* <ButtonAppBar/> */}
       <Box component='main'>
         <Outlet/>
       </Box>

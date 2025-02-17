@@ -1,4 +1,4 @@
-import { ListItemShadow } from '@/styles/components/Shadow'
+import { ListItemShadow } from '@/styles/Shadow'
 import { ListItemButton, ListItemText } from '@mui/material'
 
 interface ContactCardProps {

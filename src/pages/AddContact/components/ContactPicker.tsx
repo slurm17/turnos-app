@@ -1,4 +1,4 @@
-import { ButtonShadow } from '@/styles/components/Shadow'
+import { ButtonShadow } from '@/styles/Shadow'
 interface ContactPickerProps {
   addContact: ({ name, phone }: {name: string, phone: string}) => void
 }

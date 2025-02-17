@@ -1,6 +1,6 @@
 import { Contact } from './Contact'
 
-export type Reminder = Contact & {
+export interface Reminder extends Contact {
     date: string,
     note?: string
 } 

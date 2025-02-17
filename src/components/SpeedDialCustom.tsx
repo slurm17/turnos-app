@@ -33,7 +33,10 @@ export default function SpeedDialCustom({ actions } : SpeedDialCustomProps) {
                     icon={<Icon/>}
                     tooltipTitle={name}
                     tooltipOpen
-                    onClick={()=>{onClick(); handleClose()}}
+                    onClick={()=>{
+                        onClick() 
+                        handleClose()}
+                    }
                 />
                 ))}
             </SpeedDial>

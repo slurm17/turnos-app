@@ -1,9 +1,7 @@
 import { Button, ListItemButton, Typography } from '@mui/material'
 import WhatsAppIcon from '@mui/icons-material/WhatsApp'
 import { Reminder } from '@/types/Reminder'
-import { ListItemShadow } from '@/styles/components/Shadow'
-// import dayjs from 'dayjs'
-
+import { ListItemShadow } from '@/styles/Shadow'
 
 const ReminderCard = ({ name, phone, date }: Reminder) => {
     return (

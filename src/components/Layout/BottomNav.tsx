@@ -1,7 +1,8 @@
 import { BottomNavigation, BottomNavigationAction, Paper } from '@mui/material'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { ListItemsNav } from '../../types/ListItemsNav'
+import { ListItemsNav } from './types/ListItemsNav'
+
 interface BottomNavProps {
   listItemsNav: ListItemsNav[]
 }
