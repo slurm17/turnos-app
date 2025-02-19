@@ -4,7 +4,7 @@ import { useRegisterSW } from 'virtual:pwa-register/react'
 
 function PWABadge() {
   // periodic sync is disabled, change the value to enable it, the period is in milliseconds
-// You can remove onRegisteredSW callback and registerPeriodicSync function
+  // You can remove onRegisteredSW callback and registerPeriodicSync function
   const period = 0
 
   const {
@@ -27,7 +27,6 @@ function PWABadge() {
   })
 
   function close() {
-    
     setNeedRefresh(false)
   }
 
@@ -38,8 +37,6 @@ function PWABadge() {
         <div className="PWABadge-toast">
           <div className="PWABadge-message">
             <span id="toast-message">New content available, click on reload button to update.</span>
-              
-              
           </div>
           <div className="PWABadge-buttons">
             <button className="PWABadge-toast-button" onClick={() => updateServiceWorker(true)}>Reload</button>

@@ -1,18 +1,25 @@
-import { Alert } from '@mui/material'
-import ReminderList from './components/ReminderList'
+import { Alert, Stack } from '@mui/material'
 import { useReminderActions } from '@/hooks/useReminderActions'
 import { useReminderStore } from '@/store'
-import SpeedDialCustom from '@/components/SpeedDialCustom'
+import ReminderCard from './components/ReminderCard'
+import { PageWithSpeedDial } from '@/components'
 const Reminder = () => {
   const actions = useReminderActions()
   const reminder = useReminderStore((state) => state.reminder)
-  const reminderAlert = <Alert severity="info">No hay recordatorios agendados</Alert>
-  const reminderList = <ReminderList reminder={reminder}/>
+  const isReminderEmpty = !reminder.length
   return (
-    <>
-        {reminder.length ? reminderList : reminderAlert}
-        <SpeedDialCustom actions={actions}/>
-    </>
+    <PageWithSpeedDial actions={actions}>
+        {isReminderEmpty && 
+          <Alert severity="info">No hay recordatorios agendados</Alert>
+        }
+        {!isReminderEmpty && 
+          <Stack component={'ul'} p={0} spacing={1.5}>
+            {reminder.map((reminder, i) => 
+              (<ReminderCard key={i} {...reminder} />)
+            )}
+          </Stack>
+        }
+    </PageWithSpeedDial>
   )
 }
 

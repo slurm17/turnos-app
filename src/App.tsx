@@ -1,11 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Reminder from './pages/Reminder/Reminder'
-import NotFound from './pages/NotFound/NotFound'
-import Layout from './components/Layout/Layout'
-import AddContact from './pages/AddContact/AddContact'
-import ListContact from './pages/ListContact/ListContact'
 import * as ROUTES from '@/constants/routes'
-import AddReminder from './components/AddReminder'
+import { AddContact, ListContact, NotFound, Reminder } from './pages'
+import { AddReminder, Layout } from './components'
 function App() {
 
   return (

@@ -2,13 +2,9 @@ import Backdrop from '@mui/material/Backdrop'
 import SpeedDial from '@mui/material/SpeedDial'
 import SpeedDialIcon from '@mui/material/SpeedDialIcon'
 import SpeedDialAction from '@mui/material/SpeedDialAction'
-import { SvgIconComponent } from '@mui/icons-material'
 import { useState } from 'react'
-interface Action {
-    icon : SvgIconComponent,
-    name: string,
-    onClick: () => void
-}
+import { Action } from '@/types/Action'
+
 interface SpeedDialCustomProps {
     actions : Action[]
 }
