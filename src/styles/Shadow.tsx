@@ -8,19 +8,20 @@ const ShadowStyles = `
 `
 
 export const BoxShadow = styled(Box)(
-    `${ShadowStyles}`
+    ShadowStyles
 )
 
 export const ListItemShadow = styled(ListItem)(
-    `${ShadowStyles}`
+    `
+        ${ShadowStyles}
+        padding: 0
+    `
 )
 
 export const ButtonShadow = styled(Button)(
-    `${ShadowStyles}`
+    ShadowStyles
 )
 
-
-// En el caso de querer agregar mas estilos
 
 // const ListItemShadow = styled(BoxShadow)`
 //     // Mas estilos

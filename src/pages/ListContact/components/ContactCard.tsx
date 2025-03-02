@@ -4,12 +4,12 @@ import { ListItemButton, ListItemText } from '@mui/material'
 interface ContactCardProps {
     phone: string,
     name: string,
-    onClick: () => void
+    handleClick: () => void
 }
 
-const ContactCard = ({ name, phone, ...props }: ContactCardProps) => {
+const ContactCard = ({ name, phone, handleClick }: ContactCardProps) => {
   return (
-    <ListItemShadow disablePadding {...props}>
+    <ListItemShadow onClick={handleClick}>
       <ListItemButton>
         <ListItemText primary={`${name} ${phone}` }/>
       </ListItemButton>

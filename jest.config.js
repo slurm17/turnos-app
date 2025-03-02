@@ -1,7 +1,6 @@
 export default {
     // Especifica el entorno de prueba (jsdom para pruebas de frontend)
     testEnvironment: 'jsdom',
-  
     // Transforma archivos TypeScript y JavaScript usando ts-jest
     transform: {
       '^.+\\.tsx?$': 'ts-jest',
