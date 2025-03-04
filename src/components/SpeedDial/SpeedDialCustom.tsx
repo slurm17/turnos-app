@@ -23,16 +23,16 @@ export default function SpeedDialCustom({ actions } : SpeedDialCustomProps) {
                 onOpen={handleOpen}
                 open={open}
             >
-                {actions.map(({ name, icon: Icon, onClick }) => (
+                {actions.map(({ name, icon: Icon, handleClick }) => (
                 <SpeedDialAction
                     key={name}
                     icon={<Icon/>}
                     tooltipTitle={name}
                     tooltipOpen
                     onClick={()=>{
-                        onClick() 
-                        handleClose()}
-                    }
+                        handleClick() 
+                        handleClose()
+                    }}
                 />
                 ))}
             </SpeedDial>

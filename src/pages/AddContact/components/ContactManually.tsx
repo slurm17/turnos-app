@@ -2,12 +2,15 @@ import { ButtonShadow } from '@/styles/Shadow'
 import { Contact } from '@/types/Contact'
 import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField } from '@mui/material'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import * as ROUTES from '@/constants/routes'
 interface ContactManuallyProps {
   addContact: ({ name, phone }: {name: string, phone: string}) => void
 }
 
 const ContactManually = ({ addContact } : ContactManuallyProps) => {
   const [open, setOpen] = useState<boolean>(false)
+  const navigate = useNavigate()
   const [datos, setDatos] = useState<Contact>({
     name: '',
     phone: ''
@@ -29,6 +32,7 @@ const ContactManually = ({ addContact } : ContactManuallyProps) => {
             event.preventDefault()
             addContact({ phone: datos.phone, name: datos.name })
             handleClose()
+            navigate(ROUTES.CONTACT_LIST)
           },
         }}
       >

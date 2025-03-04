@@ -3,7 +3,7 @@ import { Dayjs } from 'dayjs'
 
 const DateUtils = {
     formatDDMMAAAA( date: Dayjs ){
-        return format(date.toString(), 'dd/MM/yyyy')
+       return format(date.toDate(), 'dd/MM/yyyy')
     }
   }
 
