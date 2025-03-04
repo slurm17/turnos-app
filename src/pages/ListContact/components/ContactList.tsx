@@ -1,6 +1,6 @@
-import { Stack } from '@mui/material'
 import { Contact } from '@/types/Contact'
 import ContactCard from './ContactCard'
+import { StackList } from '@/styles/StackList'
 
 interface ContactListProps {
     contacts: Contact[],
@@ -8,11 +8,11 @@ interface ContactListProps {
 }
 
 const ContactList = ({ contacts, onClickContact }: ContactListProps) => (
-  <Stack component={'ul'} p={0} spacing={1.5}>
+  <StackList>
     {contacts.map((contact, i) => (
       <ContactCard key={i} {...contact} handleClick={() => onClickContact(contact)} />
     ))}
-  </Stack>
+  </StackList>
 )
 
 export default ContactList

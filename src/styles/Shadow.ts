@@ -21,11 +21,3 @@ export const ListItemShadow = styled(ListItem)(
 export const ButtonShadow = styled(Button)(
     ShadowStyles
 )
-
-
-// const ListItemShadow = styled(BoxShadow)`
-//     // Mas estilos
-// `
-// export default function StyledListItemShadow({ children, ...props } : StyledListItemShadow) {
-//   return <ListItemShadow {...props}>{children}</ListItemShadow>
-// }

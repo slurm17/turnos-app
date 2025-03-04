@@ -33,7 +33,15 @@ export default defineConfig({
       suppressWarnings: true,
       type: 'module',
     },
+
   })],
+
+  server: {
+    hmr: true, // Asegúrate de que HMR esté habilitado (Hot Module Replacement)
+    port: 3077, // Puerto personalizado
+    open: true, // Abre el navegador automáticamente
+  },
+
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'), // Crea un alias para la carpeta "src"

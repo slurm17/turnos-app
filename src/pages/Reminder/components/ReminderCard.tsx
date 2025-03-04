@@ -4,6 +4,9 @@ import { Reminder } from '@/types/Reminder'
 import { ListItemShadow } from '@/styles/Shadow'
 
 const ReminderCard = ({ name, phone, date }: Reminder) => {
+    const handleClickSendMessage = () => {
+      return window.open(`https://wa.me/${phone}`)
+    }
     return (
       <ListItemShadow>
         <ListItemButton /*rowSpacing={.25} columnSpacing={1} */sx={{
@@ -20,7 +23,7 @@ const ReminderCard = ({ name, phone, date }: Reminder) => {
               {date}
           </Typography>
           <Button
-              onClick={() => window.open(`https://wa.me/${phone}`)}
+              onClick={handleClickSendMessage}
               size='small'
               sx={{
                   height: '100%',
