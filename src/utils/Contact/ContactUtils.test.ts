@@ -1,5 +1,6 @@
 import { Contact } from '@/types/Contact'
 import ContactUtils from './ContactUtils'
+import { describe, test, expect } from 'vitest'
 
 describe('ContactUtils - isContactsEmpty', () => {
     test('debe devolver true si el arreglo de contactos está vacío', () => {

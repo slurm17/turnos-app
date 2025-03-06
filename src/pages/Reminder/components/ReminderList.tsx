@@ -1,4 +1,4 @@
-import { StackList } from '@/styles/StackList'
+import StackList from '@/styles/StackList'
 import { Reminder } from '@/types/Reminder'
 import ReminderCard from './ReminderCard'
 

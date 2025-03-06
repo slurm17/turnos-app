@@ -4,7 +4,7 @@ interface MyStackProps {
     children : React.ReactNode
 }
 
-export const StackList = ({ children } : MyStackProps ) => ( 
+const StackList = ({ children } : MyStackProps ) => ( 
     <Stack 
         component={'ul'} 
         spacing={1.5} 
@@ -16,3 +16,5 @@ export const StackList = ({ children } : MyStackProps ) => (
         {children}
     </Stack>
 )
+
+export default StackList

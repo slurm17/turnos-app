@@ -1,5 +1,6 @@
 import DateUtils from './DateUtils'
 import dayjs from 'dayjs'
+import { describe, test, expect } from 'vitest'
 
 describe('DateUtils - formatDDMMAAAA', () => {
     test('debe formatear correctamente una fecha a dd/MM/yyyy', () => {

@@ -2,7 +2,7 @@ import ContactPicker from '@/pages/AddContact/components/ContactPicker'
 import ContactManually from './components/ContactManually'
 import ContactFile from './components/ContactFile'
 import { useContactStore } from '@/store'
-import { StackList } from '@/styles/StackList'
+import StackList from '@/styles/StackList'
 
 const AddContact = () => {
   const addContact = useContactStore((state) => state.addContact)

@@ -1,9 +1,10 @@
 import { render, screen, fireEvent } from '@testing-library/react'
 import ContactCard from './ContactCard'
-
+import { vi } from 'vitest'
+import { describe, it, expect } from 'vitest'
 // Mock componente ListItemShadow (necesario)
-jest.mock('@/styles/Shadow', () => ({
-  ListItemShadow: jest.fn(({ children, ...props }) => <div {...props}>{children}</div>),
+vi.mock('@/styles/Shadow', () => ({
+  ListItemShadow: vi.fn(({ children, ...props }) => <div {...props}>{children}</div>),
 }))
 
 // jest.mock('@mui/material', () => ({
@@ -20,7 +21,7 @@ describe('ContactCard', () => {
 
   it('debe ejecutar onClick al hacer clic en el botón', () => {
     // Simula una función para manejar el clic
-    const handleClick = jest.fn()
+    const handleClick = vi.fn()
     render(<ContactCard name="Lucas" phone="3435123132" handleClick={handleClick} />)
     // Simula un clic en el botón
     const button = screen.getByText('Lucas 3435123132')

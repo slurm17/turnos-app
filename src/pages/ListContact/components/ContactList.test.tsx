@@ -1,11 +1,12 @@
 import { render, screen, fireEvent } from '@testing-library/react'
 import ContactList from './ContactList'
 import { Contact } from '@/types/Contact'
-
+import { vi } from 'vitest'
+import { describe, it, expect } from 'vitest'
 // Mock de ContactCard
-jest.mock('./ContactCard', () => ({
+vi.mock('./ContactCard', () => ({
     __esModule: true,
-    default: jest.fn(({ handleClick, ...props }) => {
+    default: vi.fn(({ handleClick, ...props }) => {
       return (
         <div data-testid="contact-card" onClick={handleClick}>
           {JSON.stringify(props)}
@@ -20,7 +21,7 @@ describe('ContactList', () => {
     { name: 'Juan', phone: '3434486601' },
   ]
 
-  const mockOnClickContact = jest.fn()
+  const mockOnClickContact = vi.fn()
 
   it('debe renderizar la lista de contactos', () => {
     render(<ContactList contacts={mockContacts} onClickContact={mockOnClickContact} />)
