@@ -4,7 +4,7 @@ import * as ROUTES from '@/constants/routes'
 import { useContactStore } from '@/store'
 import { ContactUtils } from '@/utils'
 import { useContactActions } from '@/hooks/useContactActions'
-import { PageWithSpeedDial } from '@/components'
+import { PageWithOptions } from '@/components'
 import { Contact } from '@/types/Contact'
 import ContactList from './components/ContactList'
 const ListContact = () => {
@@ -16,14 +16,14 @@ const ListContact = () => {
     navigate(ROUTES.REMINDER_ADD, { state: { contact } })
   }
   return (
-    <PageWithSpeedDial actions={actions}>
+    <PageWithOptions actions={actions}>
       {isContactsEmpty && 
         <Alert severity="info">{'No hay contactos agregados'}</Alert>
       }
       {!isContactsEmpty &&
         <ContactList contacts={contacts} onClickContact={onClickContact}/>
       }
-    </PageWithSpeedDial>
+    </PageWithOptions>
   )
 }
 

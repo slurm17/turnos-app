@@ -1,15 +1,15 @@
 import React from 'react'
 import SpeedDialCustom from './SpeedDialCustom'
 import { Action } from '@/types/Action'
-import OptionsBar from '../Layout/OptionsBar'
+import OptionsBar from './OptionsBar'
 import { Theme, useMediaQuery } from '@mui/material'
 
-interface PageWithSpeedDialProps {
+interface PageWithOptionsProps {
   actions: Action[];
   children: React.ReactNode;
 }
 
-const PageWithSpeedDial = ({ actions, children } : PageWithSpeedDialProps) => {
+const PageWithOptions = ({ actions, children } : PageWithOptionsProps) => {
   const isMobile = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'))
   return (
     <>
@@ -20,4 +20,4 @@ const PageWithSpeedDial = ({ actions, children } : PageWithSpeedDialProps) => {
   )
 }
 
-export default PageWithSpeedDial
+export default PageWithOptions
