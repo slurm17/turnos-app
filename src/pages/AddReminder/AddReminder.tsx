@@ -5,7 +5,7 @@ import { Contact } from '@/types/Contact'
 import { useState } from 'react'
 import { Dayjs } from 'dayjs'
 import dayjs from 'dayjs'
-import * as ROUTES from '@/constants/routes'
+import ROUTES from '@/constants/routes'
 import { useReminderStore } from '@/store'
 import { DateUtils } from '@/utils'
 const AddReminder = () => { 

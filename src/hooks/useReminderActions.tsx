@@ -1,6 +1,6 @@
 import { useReminderStore } from '@/store'
 import { useNavigate } from 'react-router-dom'
-import * as ROUTES from '@/constants/routes'
+import ROUTES from '@/constants/routes'
 import { Delete, Add } from '@mui/icons-material'
 
 export const useReminderActions = () => {

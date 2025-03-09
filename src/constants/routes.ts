@@ -1,4 +1,8 @@
-export const REMINDER = '/'
-export const REMINDER_ADD = '/reminder/add'
-export const CONTACT_LIST = '/contact/list'
-export const CONTACT_ADD = '/contact/add'
+enum ROUTES {
+    REMINDER = '/',
+    REMINDER_ADD = '/reminder/add',
+    CONTACT_LIST = '/contact/list',
+    CONTACT_ADD = '/contact/add'
+  }
+
+export default ROUTES

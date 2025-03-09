@@ -3,7 +3,7 @@ import { Contact } from '@/types/Contact'
 import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField } from '@mui/material'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import * as ROUTES from '@/constants/routes'
+import ROUTES from '@/constants/routes'
 interface ContactManuallyProps {
   addContact: ({ name, phone }: {name: string, phone: string}) => void
 }

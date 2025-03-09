@@ -1,6 +1,6 @@
 import { Alert } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
-import * as ROUTES from '@/constants/routes'
+import ROUTES from '@/constants/routes'
 import { useContactStore } from '@/store'
 import { ContactUtils } from '@/utils'
 import { useContactActions } from '@/hooks/useContactActions'

@@ -1,7 +1,7 @@
 import { useContactStore } from '@/store'
 import { useNavigate } from 'react-router-dom'
-import * as ROUTES from '@/constants/routes'
 import { PersonAddDisabled, PersonAdd } from '@mui/icons-material'
+import ROUTES from '@/constants/routes'
 export const useContactActions = () => {
   const clearContacts = useContactStore((state) => state.clearContacts)
   const navigate = useNavigate()
