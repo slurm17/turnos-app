@@ -10,7 +10,7 @@ export default defineConfig({
     visualizer({ open: true }),
     react(), 
     VitePWA({
-    registerType: 'prompt',
+    registerType: 'autoUpdate',
     injectRegister: false,
   
     pwaAssets: {
@@ -26,6 +26,7 @@ export default defineConfig({
     },
 
     workbox: {
+      skipWaiting: true,
       globPatterns: ['**/*.{js,css,html,svg,png,ico}'],
       cleanupOutdatedCaches: true,
       clientsClaim: true,
