@@ -21,3 +21,4 @@ const PageWithOptions = ({ actions, children } : PageWithOptionsProps) => {
 }
 
 export default PageWithOptions
+
