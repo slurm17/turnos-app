@@ -10,7 +10,7 @@ const Reminder = () => {
 	return (
 		<PageWithOptions actions={actions}>
 		{isReminderEmpty && 
-			<Alert severity="info">No hay recordatorios agendados</Alert>
+			<Alert severity="info">No hay recordatorios agendado</Alert>
 		}
 		{!isReminderEmpty && 
 			<ReminderList reminder={reminder}/>
