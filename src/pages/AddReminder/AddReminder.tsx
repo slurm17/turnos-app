@@ -14,22 +14,25 @@ const AddReminder = () => {
   const location = useLocation()
   const { contact: { name, phone } } = location.state as { contact: Contact } 
   const addReminder = useReminderStore(state => state.addReminder)
-  const handleClickAceptar = () => {
+  const handleAceptar = () => {
     addReminder({ name, phone, date: DateUtils.formatDDMMAAAA(date) })
     navigate(ROUTES.REMINDER)
+  }
+  const handleCancelar = () => {
+    navigate(ROUTES.CONTACT_LIST)
   }
   const handleChangeCalendar = (newValue : Dayjs) => {
     setDate(newValue)
   }
   return (
     <div>
-        <Typography>{name || 'NOMBRE'}</Typography>
-        <Typography>{phone || 'TELEFONO'}</Typography>
-        <DateCalendar
-          disablePast
-          value={date} 
-          onChange={handleChangeCalendar}
-        />
+      <Typography>{name || 'NOMBRE'}</Typography>
+      <Typography>{phone || 'TELEFONO'}</Typography>
+      <DateCalendar
+        disablePast
+        value={date} 
+        onChange={handleChangeCalendar}
+      />
       <Typography>Fecha: {DateUtils.formatDDMMAAAA(date)}</Typography>
       <Stack
         spacing={5}
@@ -42,13 +45,13 @@ const AddReminder = () => {
       >
         <Button
           variant='outlined'
-          onClick={()=>navigate(ROUTES.CONTACT_LIST)}
+          onClick={handleCancelar}
           >
           {'Cancelar'}
         </Button>
         <Button
           variant='contained'
-          onClick={handleClickAceptar}
+          onClick={handleAceptar}
           >
           {'Aceptar'}
         </Button>
