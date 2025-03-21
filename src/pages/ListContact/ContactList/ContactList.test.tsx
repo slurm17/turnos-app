@@ -1,8 +1,8 @@
 import { render, screen, fireEvent } from '@testing-library/react'
-import ContactList from './ContactList'
 import { Contact } from '@/types/Contact'
 import { vi } from 'vitest'
 import { describe, it, expect } from 'vitest'
+import ContactList from './ContactList'
 // Mock de ContactCard
 vi.mock('./ContactCard', () => ({
     __esModule: true,

@@ -1,9 +1,10 @@
-import { format } from 'date-fns'
-import { Dayjs } from 'dayjs'
+import dayjs, { Dayjs } from 'dayjs'
 
 const DateUtils = {
-    formatDDMMAAAA( date: Dayjs ){
-       return format(date.toDate(), 'dd/MM/yyyy')
+  formatDDMMAAAA( date: Dayjs ){
+      if (!dayjs.isDayjs(date)) 
+        return 'date != :Dayjs'
+      return date.format('DD/MM/YYYY')
     }
   }
 

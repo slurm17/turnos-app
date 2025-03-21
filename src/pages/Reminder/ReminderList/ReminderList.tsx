@@ -1,6 +1,6 @@
 import StackList from '@/styles/StackList'
 import { Reminder } from '@/types/Reminder'
-import ReminderCard from './ReminderCard'
+import ReminderCard from '../ReminderCard/ReminderCard'
 
 interface ReminderListProps {
     reminder: Reminder[]

@@ -1,19 +1,17 @@
-import { Reminder } from '@/types/Reminder'
-import { parse } from 'date-fns'
+import { Reminder, ReminderWithoutId } from '@/types/Reminder'
 import { create } from 'zustand'
 import { persist, createJSONStorage } from 'zustand/middleware'
-
+import { v4 as uuidv4 } from 'uuid'
+import { Dayjs } from 'dayjs'
 // Definición de la interfaz para el estado del store
 interface ReminderState {
   reminder: Reminder[]
-  addReminder: (newReminder: Reminder) => void;
+  addReminder: (newReminder: ReminderWithoutId) => void;
   clearReminder: () => void;
 }
 
- const sortDates = (a: string, b: string) => {
-    const dateA = parse(a, 'dd/MM/yyyy', new Date())
-    const dateB = parse(b, 'dd/MM/yyyy', new Date())
-    return dateA.getTime() - dateB.getTime()
+ const sortDates = (a: Dayjs, b: Dayjs) => {
+    return a.valueOf() - b.valueOf()
   }
 
 // Creación del store con persistencia
@@ -22,9 +20,12 @@ const useReminderStore = create<ReminderState>()(
     (set) => ({
       reminder: [],
       addReminder: (newReminder) => {
+        const reminderWithId = {
+          ...newReminder,
+          id: uuidv4()
+        }
         set((state)=>({
-          // reminder: [...state.reminder, newReminder].sort((a, b) => a.date.diff(b.date))
-          reminder: [...state.reminder, newReminder].sort((a,b)=> sortDates(a.date, b.date))
+          reminder: [...state.reminder, reminderWithId].sort((a,b)=> sortDates(a.date, b.date))
         }))
       },
       clearReminder: () => set({ reminder: [] })

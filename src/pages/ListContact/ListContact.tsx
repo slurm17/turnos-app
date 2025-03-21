@@ -6,7 +6,7 @@ import { ContactUtils } from '@/utils'
 import { useContactActions } from '@/hooks/useContactActions'
 import { PageWithOptions } from '@/components'
 import { Contact } from '@/types/Contact'
-import ContactList from './components/ContactList'
+import ContactList from './ContactList/ContactList'
 const ListContact = () => {
   const contacts  = useContactStore(state => state.contacts)
   const navigate = useNavigate()

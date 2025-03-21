@@ -1,7 +1,7 @@
 import { Alert } from '@mui/material'
 import { useReminderActions } from '@/hooks/useReminderActions'
 import { useReminderStore } from '@/store'
-import ReminderList from './components/ReminderList'
+import ReminderList from './ReminderList/ReminderList'
 import { PageWithOptions } from '@/components'
 const Reminder = () => {
 	const actions = useReminderActions()

@@ -1,5 +1,4 @@
 import { useLocation, useNavigate } from 'react-router-dom'
-import { Button, Stack, Typography } from '@mui/material'
 import { DateCalendar } from '@mui/x-date-pickers'
 import { Contact } from '@/types/Contact'
 import { useState } from 'react'
@@ -7,7 +6,7 @@ import { Dayjs } from 'dayjs'
 import dayjs from 'dayjs'
 import ROUTES from '@/constants/routes'
 import { useReminderStore } from '@/store'
-import { DateUtils } from '@/utils'
+import { AceptCancelButtons, ReminderInfo } from '@/components'
 const AddReminder = () => { 
   const [date, setDate] = useState<Dayjs>(dayjs())
   const navigate = useNavigate()
@@ -15,7 +14,7 @@ const AddReminder = () => {
   const { contact: { name, phone } } = location.state as { contact: Contact } 
   const addReminder = useReminderStore(state => state.addReminder)
   const handleAceptar = () => {
-    addReminder({ name, phone, date: DateUtils.formatDDMMAAAA(date) })
+    addReminder({ name, phone, date })
     navigate(ROUTES.REMINDER)
   }
   const handleCancelar = () => {
@@ -26,36 +25,13 @@ const AddReminder = () => {
   }
   return (
     <div>
-      <Typography>{name || 'NOMBRE'}</Typography>
-      <Typography>{phone || 'TELEFONO'}</Typography>
       <DateCalendar
         disablePast
         value={date} 
         onChange={handleChangeCalendar}
       />
-      <Typography>Fecha: {DateUtils.formatDDMMAAAA(date)}</Typography>
-      <Stack
-        spacing={5}
-        direction="row"
-        sx={{
-          justifyContent: 'center',
-          alignItems: 'center',
-          mt: 4
-        }}
-      >
-        <Button
-          variant='outlined'
-          onClick={handleCancelar}
-          >
-          {'Cancelar'}
-        </Button>
-        <Button
-          variant='contained'
-          onClick={handleAceptar}
-          >
-          {'Aceptar'}
-        </Button>
-      </Stack>
+      <ReminderInfo name={name} phone={phone} date={date}/>
+      <AceptCancelButtons handleCancelar={handleCancelar} handleAceptar={handleAceptar}/>
     </div>
   )
 }

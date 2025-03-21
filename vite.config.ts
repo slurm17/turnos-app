@@ -19,8 +19,8 @@ export default defineConfig({
     },
 
     manifest: {
-      name: 'turnos-app',
-      short_name: 'turnos',
+      name: 'Turnos App',
+      short_name: 'Turnos',
       description: 'App destinada a la organizacion de negocios',
       theme_color: '#f3f3f3',
     },
