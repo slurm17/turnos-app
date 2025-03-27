@@ -1,15 +1,14 @@
 import { Reminder, ReminderWithoutId } from '@/types/Reminder'
 import { create } from 'zustand'
-import { persist, createJSONStorage } from 'zustand/middleware'
+import { persist } from 'zustand/middleware'
 import { v4 as uuidv4 } from 'uuid'
-import { Dayjs } from 'dayjs'
+import dayjs, { Dayjs } from 'dayjs'
 // Definición de la interfaz para el estado del store
 interface ReminderState {
   reminder: Reminder[]
   addReminder: (newReminder: ReminderWithoutId) => void;
   clearReminder: () => void;
 }
-
  const sortDates = (a: Dayjs, b: Dayjs) => {
     return a.valueOf() - b.valueOf()
   }
@@ -31,8 +30,34 @@ const useReminderStore = create<ReminderState>()(
       clearReminder: () => set({ reminder: [] })
     }),
     {
-      name: 'reminder-storage', // Nombre clave en el almacenamiento
-      storage: createJSONStorage(() => localStorage), // Utiliza localStorage para persistencia
+      name: 'reminder-storage', 
+      storage: {
+        getItem: (name) => {
+          const str = localStorage.getItem(name)
+          if (str) {
+            const parsed = JSON.parse(str)
+            const remindersWithDayjs = parsed.state.reminder?.map((reminder: Reminder) => ({
+              ...reminder,
+              date: dayjs(reminder.date)
+            })) || []
+            return {
+              state: {
+                reminder: remindersWithDayjs,
+              }
+            }
+          }
+          return { 
+            state: { 
+              reminder: [],
+            } 
+          }
+        },
+        setItem: (name, value) => {
+          const str = JSON.stringify(value)
+          localStorage.setItem(name, str)
+        },
+        removeItem: (name) => localStorage.removeItem(name),
+      },
     }
   )
 )

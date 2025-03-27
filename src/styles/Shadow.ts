@@ -1,23 +1,17 @@
 import { Box, Button, ListItem, styled } from '@mui/material'
 
-const ShadowStyles = `
-    background-color: #fff;
-    width: 100%;
-    border-radius: 7px;
-    box-shadow: 0px 0px 12px -3px rgba(0,0,0,0.34);
-`
+const getShadowStyles = () => ({
+  backgroundColor: '#fff',
+  width: '100%',
+  borderRadius: '7px',
+  boxShadow: '0px 0px 12px -3px rgba(0,0,0,0.34)',
+})
 
-export const BoxShadow = styled(Box)(
-    ShadowStyles
-)
+export const BoxShadow = styled(Box)(getShadowStyles)
 
-export const ListItemShadow = styled(ListItem)(
-    `
-        ${ShadowStyles}
-        padding: 0
-    `
-)
+export const ListItemShadow = styled(ListItem)(() => ({
+  ...getShadowStyles(),
+  padding: 0,
+}))
 
-export const ButtonShadow = styled(Button)(
-    ShadowStyles
-)
+export const ButtonShadow = styled(Button)(getShadowStyles)
