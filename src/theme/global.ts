@@ -51,7 +51,8 @@ export const theme = createTheme({
           textAlign: 'center',
           padding: '1.75rem 1rem 70px 1rem',
           width: '100%',
-          maxWidth: brkptsValues.sm
+          maxWidth: brkptsValues.sm,
+          gap: '.8rem'
         },
       },
     },

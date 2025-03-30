@@ -17,12 +17,15 @@ const ListContact = () => {
   }
   return (
     <PageWithOptions actions={actions}>
-      {isContactsEmpty && 
-        <Alert severity="info">{'No hay contactos agregados'}</Alert>
-      }
-      {!isContactsEmpty &&
-        <ContactList contacts={contacts} onClickContact={onClickContact}/>
-      }
+        {isContactsEmpty && 
+          <Alert severity="info">{'No hay contactos agregados'}</Alert>
+        }
+        {!isContactsEmpty &&
+        <>
+          <Alert severity="info">{'Selecciona un contacto para agregar un recordatorio'}</Alert>
+          <ContactList contacts={contacts} onClickContact={onClickContact}/>
+        </>
+        }
     </PageWithOptions>
   )
 }
