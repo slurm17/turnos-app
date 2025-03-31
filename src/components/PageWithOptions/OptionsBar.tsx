@@ -8,7 +8,7 @@ interface OptionsBarProps {
 const OptionsBar = ({ actions }: OptionsBarProps) => {
   return (
     <Box sx={{
-        padding: '0 0 1rem 0', 
+        // padding: '0 0 1rem 0', 
         display: 'flex',
         flexWrap: 'wrap',
         gap: '0.5rem'

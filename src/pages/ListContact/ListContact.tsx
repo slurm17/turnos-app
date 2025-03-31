@@ -1,19 +1,44 @@
 import { Alert } from '@mui/material'
-import { useNavigate } from 'react-router-dom'
 import ROUTES from '@/constants/routes'
-import { useContactStore } from '@/store'
+import { useContactStore, useReminderStore } from '@/store'
 import { ContactUtils } from '@/utils'
 import { useContactActions } from '@/hooks/useContactActions'
 import { PageWithOptions } from '@/components'
 import { Contact } from '@/types/Contact'
 import ContactList from './ContactList/ContactList'
+import ReminderAddModal from '@/components/reminders/ReminderAddModal'
+import { useState } from 'react'
+import dayjs, { Dayjs } from 'dayjs'
+import { useNavigate } from 'react-router-dom'
+
 const ListContact = () => {
   const contacts  = useContactStore(state => state.contacts)
-  const navigate = useNavigate()
-  const actions = useContactActions()
   const isContactsEmpty = ContactUtils.isContactsEmpty(contacts)
+
+  const addReminder = useReminderStore(state => state.addReminder)
+  const actions = useContactActions()
+  const navigate = useNavigate()
+  const [openModal, setOpenModal] = useState(false)
+  const [contactSelected, setContactSelected] = useState<Contact>(ContactUtils.getContactEmpty())
+  const [selectedDate, setSelectedDate] = useState<Dayjs>(dayjs())
   const onClickContact = (contact : Contact) => {
-    navigate(ROUTES.REMINDER_ADD, { state: { contact } })
+    setContactSelected(contact)
+    setOpenModal(true)
+  }
+  const onAccept = () => {
+    addReminder({ 
+      name: contactSelected.name, 
+      phone: contactSelected.phone, 
+      date: selectedDate,
+    })
+    navigate(ROUTES.REMINDER)
+  }
+  const onCancel = () => {
+    setOpenModal(false)
+    setSelectedDate(dayjs())
+  }
+  const onDateChange = (newDate : Dayjs) => {
+    setSelectedDate(newDate)
   }
   return (
     <PageWithOptions actions={actions}>
@@ -24,6 +49,14 @@ const ListContact = () => {
         <>
           <Alert severity="info">{'Selecciona un contacto para agregar un recordatorio'}</Alert>
           <ContactList contacts={contacts} onClickContact={onClickContact}/>
+          <ReminderAddModal 
+            contact={contactSelected} 
+            open={openModal} 
+            onCancel={onCancel} 
+            onAccept={onAccept}
+            onDateChange={onDateChange}
+            selectedDate={selectedDate}
+          />
         </>
         }
     </PageWithOptions>

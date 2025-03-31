@@ -1,11 +1,11 @@
 import { Button, Stack } from '@mui/material'
 
 interface AceptCancelButtonsProps {
-    handleCancelar: () => void
-    handleAceptar: () => void
+    onCancel: () => void
+    onAccept: () => void
 }
 
-const AceptCancelButtons = ({ handleCancelar, handleAceptar }: AceptCancelButtonsProps) => {
+const AcceptCancelButtons = ({ onCancel, onAccept }: AceptCancelButtonsProps) => {
   return (
     <Stack
         spacing={5}
@@ -18,13 +18,13 @@ const AceptCancelButtons = ({ handleCancelar, handleAceptar }: AceptCancelButton
       >
         <Button
           variant='outlined'
-          onClick={handleCancelar}
+          onClick={onCancel}
           >
           {'Cancelar'}
         </Button>
         <Button
           variant='contained'
-          onClick={handleAceptar}
+          onClick={onAccept}
           >
           {'Aceptar'}
         </Button>
@@ -32,4 +32,4 @@ const AceptCancelButtons = ({ handleCancelar, handleAceptar }: AceptCancelButton
   )
 }
 
-export default AceptCancelButtons
+export default AcceptCancelButtons
