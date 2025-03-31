@@ -8,8 +8,9 @@ import { Contact } from '@/types/Contact'
 import ContactList from './ContactList/ContactList'
 import ReminderAddModal from '@/components/reminders/ReminderAddModal'
 import { useState } from 'react'
-import dayjs, { Dayjs } from 'dayjs'
+import { Dayjs } from 'dayjs'
 import { useNavigate } from 'react-router-dom'
+import dayjs from '@/dayjsConfig'
 
 const ListContact = () => {
   const contacts  = useContactStore(state => state.contacts)

@@ -1,5 +1,5 @@
 import DateUtils from './DateUtils'
-import dayjs from 'dayjs'
+import dayjs from '@/dayjsConfig'
 import { describe, test, expect } from 'vitest'
 
 describe('DateUtils - formatDDMMAAAA', () => {

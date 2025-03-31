@@ -2,7 +2,8 @@ import { Reminder, ReminderWithoutId } from '@/types/Reminder'
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 import { v4 as uuidv4 } from 'uuid'
-import dayjs, { Dayjs } from 'dayjs'
+import { Dayjs } from 'dayjs'
+import dayjs from '@/dayjsConfig'
 // Definición de la interfaz para el estado del store
 interface ReminderState {
   reminder: Reminder[]
