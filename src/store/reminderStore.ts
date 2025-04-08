@@ -9,6 +9,7 @@ interface ReminderState {
   reminder: Reminder[]
   addReminder: (newReminder: ReminderWithoutId) => void;
   clearReminder: () => void;
+  deleteReminder: (id: string) => void;
 }
  const sortDates = (a: Dayjs, b: Dayjs) => {
     return a.valueOf() - b.valueOf()
@@ -28,7 +29,8 @@ const useReminderStore = create<ReminderState>()(
           reminder: [...state.reminder, reminderWithId].sort((a,b)=> sortDates(a.date, b.date))
         }))
       },
-      clearReminder: () => set({ reminder: [] })
+      clearReminder: () => set({ reminder: [] }),
+      deleteReminder: (id : string) => set((state) => ({ reminder: state.reminder.filter((reminder) => reminder.id !== id) })),
     }),
     {
       name: 'reminder-storage', 
