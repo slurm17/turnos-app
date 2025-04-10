@@ -1,6 +1,6 @@
-import ContactPicker from '@/pages/AddContact/components/ContactPicker'
 import ContactManually from './components/ContactManually'
 import ContactFile from './components/ContactFile'
+import ContactPicker from './components/ContactPicker'
 import { useContactStore } from '@/store'
 
 const AddContact = () => {

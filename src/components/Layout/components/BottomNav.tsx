@@ -1,17 +1,21 @@
 import { BottomNavigation, BottomNavigationAction, Paper } from '@mui/material'
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { ListItemsNav } from './types/ListItemsNav'
+import { useLocation, useNavigate } from 'react-router-dom'
+import { ListItemsNav } from '../types/ListItemsNav'
 
 interface BottomNavProps {
   listItemsNav: ListItemsNav[]
 }
-const BottomNav = ({ listItemsNav }:BottomNavProps) => {
-  const [value, setValue] = useState(0)
-  const navigate = useNavigate()
-  const pages : string[] = []
-  pages.push(...listItemsNav.map((item) => (item.navigateTo)))
 
+const BottomNav = ({ listItemsNav }: BottomNavProps) => {
+  const { pathname } = useLocation()
+  const navigate = useNavigate()
+  // Esto en caso de necesitar usar rutas anidadas
+  // const getActiveValue = () => {
+  //   if (pathname.startsWith('/profile')) {
+  //     return '/profile'
+  //   }
+  //   return location.pathname
+  // }
   return (
     <Paper
       component={'nav'}
@@ -31,15 +35,15 @@ const BottomNav = ({ listItemsNav }:BottomNavProps) => {
           bottom: 0
         }}
         showLabels
-        value={value}
+        value={pathname}
         onChange={(_e, newValue) => {
-          setValue(newValue)
-          navigate(pages[newValue])
+          navigate(newValue)
         }}
       >
-        {listItemsNav.map(({ text, icon: Icon }, i) => (
+        {listItemsNav.map(({ text, icon: Icon, navigateTo }, i) => (
           <BottomNavigationAction 
             key={i} 
+            value={navigateTo}
             label={text} 
             icon={<Icon/>} 
           />

@@ -1,8 +1,9 @@
 import { Box } from '@mui/material'
 import { Outlet } from 'react-router-dom'
 import { listItemsNav } from './constants/listItemsNav'
-import DrawerNav from './DrawerNav'
-import BottomNav from './BottomNav'
+import DrawerNav from './components/DrawerNav'
+import BottomNav from './components/BottomNav'
+
 
 const Layout = () => {
   return (

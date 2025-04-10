@@ -1,5 +1,4 @@
 export { default as PageWithOptions } from './PageWithOptions/PageWithOptions'
 export { default as Layout } from './Layout/Layout'
-export { default as ReminderInfo } from './reminders/ReminderInfo'
-export { default as WhatsAppButton } from './buttons/WhatsAppButton'
-export { default as AcceptCancelButtons } from './buttons/AceptCancelButtons'
+export * from './reminders'
+export * from './buttons'

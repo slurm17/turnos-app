@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import { AddContact, ListContact, NotFound, Reminder } from './pages'
-import { Layout } from './components'
 import ROUTES from '@/constants/routes'
+import { Layout } from '@/components'
 function App() {
 
   return (

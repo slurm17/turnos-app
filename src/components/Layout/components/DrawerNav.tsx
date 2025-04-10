@@ -2,7 +2,7 @@ import Drawer from '@mui/material/Drawer'
 import Toolbar from '@mui/material/Toolbar'
 import Divider from '@mui/material/Divider'
 import DrawerItem from './DrawerItem'
-import { ListItemsNav } from './types/ListItemsNav'
+import { ListItemsNav } from '../types/ListItemsNav'
 interface DrawerNavProps {
   listItemsNav : ListItemsNav[],
   // hidden: boolean
