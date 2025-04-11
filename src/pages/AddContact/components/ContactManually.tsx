@@ -1,9 +1,10 @@
 import { ButtonShadow } from '@/styles/Shadow'
 import { Contact } from '@/types/Contact'
-import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField } from '@mui/material'
+import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField } from '@mui/material'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import ROUTES from '@/constants/routes'
+import { AcceptCancelButtons } from '@/components'
 interface ContactManuallyProps {
   addContact: ({ name, phone }: {name: string, phone: string}) => void
 }
@@ -66,8 +67,9 @@ const ContactManually = ({ addContact } : ContactManuallyProps) => {
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Cancelar</Button>
-          <Button type="submit">Aceptar</Button>
+          <AcceptCancelButtons onCancel={handleClose} />
+          {/* <Button onClick={handleClose}>Cancelar</Button>
+          <Button type="submit">Aceptar</Button> */}
         </DialogActions>
       </Dialog>
       <ButtonShadow 
