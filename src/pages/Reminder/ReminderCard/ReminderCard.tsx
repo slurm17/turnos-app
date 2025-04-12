@@ -7,9 +7,7 @@ import DeleteButton from './DeleteButton'
 
 const ReminderCard = ({ name, phone, date, id }: Reminder) => {
     const deleteReminder = useReminderStore((state) => state.deleteReminder)
-    const handleClickSendMessage = () => {
-      return window.open(`https://wa.me/${phone}`)
-    }
+
     const onDelete = () => {
       deleteReminder(id)
     }  
@@ -21,7 +19,7 @@ const ReminderCard = ({ name, phone, date, id }: Reminder) => {
           position: 'relative',
         }}>
           <ReminderInfo name={name} phone={phone} date={date} />
-          <WhatsAppButton text='Enviar mensaje' handleClick={handleClickSendMessage}/>
+          <WhatsAppButton text='Enviar mensaje' phone={phone}/>
           <DeleteButton onDelete={onDelete}/>
         </ListItemButton>
       </ListItemShadow>

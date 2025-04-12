@@ -2,14 +2,18 @@ import { Button } from '@mui/material'
 import WhatsAppIcon from '@mui/icons-material/WhatsApp'
 
 interface WhatsAppButtonProps {
-    handleClick : () => void,
+    phone : string,
     text: string
 }
 
-const WhatsAppButton = ({ handleClick, text } : WhatsAppButtonProps) => {
+const handleClickSendMessage = (phone : string) => {
+  return window.open(`https://wa.me/${phone}`)
+}
+
+const WhatsAppButton = ({ phone, text } : WhatsAppButtonProps) => {
   return (
     <Button
-        onClick={handleClick}
+        onClick={() => handleClickSendMessage(phone)}
         size='small'
         sx={{
             padding: '5px 17px',

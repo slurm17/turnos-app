@@ -18,8 +18,10 @@ const DateUtils = {
       .split(' ')
       .map(word => word.charAt(0).toUpperCase() + word.slice(1))
       .join(' ')
+  },
+  isExpired(date: Dayjs) {
+    return date.isBefore(dayjs(), 'day')
   }
 }
-
 
 export default DateUtils

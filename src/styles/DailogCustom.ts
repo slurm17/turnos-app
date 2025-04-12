@@ -7,7 +7,7 @@ export const DialogCustom = styled(Dialog)(({ theme }) => ({
         justifyContent: 'center',
         alignItems: 'center',
         margin: 0,
-        padding: '15px 5px',
+        padding: '10px 5px',
         maxWidth: '330px',
         [theme.breakpoints.up('sm')]: {
             maxWidth: theme.breakpoints.values.sm,
