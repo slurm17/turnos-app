@@ -39,17 +39,22 @@ export const theme = createTheme({
           backgroundColor: colorSecondaryMain
         },
         '#root': {
-          maxWidth: '1280px',
           margin: '0 auto',
           width: '100%',
           display: 'flex',
-          justifyContent: 'center'
+        },
+        '#container-main': {
+          width: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+          flexDirection: 'column',
+          alignItems: 'center',
         },
         main: {
           display: 'flex',
           flexDirection: 'column',
           textAlign: 'center',
-          padding: '1.75rem 1rem 70px 1rem',
+          padding: '0.75rem 1rem 70px 1rem',
           width: '100%',
           maxWidth: brkptsValues.sm,
           gap: '.8rem'

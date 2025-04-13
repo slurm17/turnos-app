@@ -5,19 +5,19 @@ import DrawerItem from './DrawerItem'
 import { ListItemsNav } from '../types/ListItemsNav'
 interface DrawerNavProps {
   listItemsNav : ListItemsNav[],
-  // hidden: boolean
 }
-const drawerWidth = 240
+const drawerWidthMd = 240
+const drawerWidthSm = 190
 const DrawerNav = ({ listItemsNav/*, ...props*/ } : DrawerNavProps) => {
   return (
       <Drawer
         // {...props}
         sx={{
           display: { xs: 'none', sm: 'block' },
-          width: drawerWidth,
+          width: { sm: drawerWidthSm, md: drawerWidthMd },
           flexShrink: 0,
           '& .MuiDrawer-paper': {
-            width: drawerWidth,
+            width: { sm: drawerWidthSm, md: drawerWidthMd },
             boxSizing: 'border-box',
           },
         }}

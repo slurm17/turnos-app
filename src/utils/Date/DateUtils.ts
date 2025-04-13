@@ -8,10 +8,12 @@ const DateUtils = {
       return date.format('DD/MM/YYYY')
     },
   getRemainingDays(date: Dayjs) {
+    if(this.isExpired(date)) 
+      return 'El recordatorio ya pasó.'
     const daysRemaining = date.diff(dayjs().startOf('day'), 'day')
-      if (daysRemaining === 0) return 'Hoy'
-      if (daysRemaining < 0) return 'El recordatorio ya pasó.'
-      return `${daysRemaining} días`
+    if (daysRemaining === 0) 
+      return 'Hoy'
+    return `${daysRemaining} días`
   },
   getfullDate(date: Dayjs){
     return date.format('ddd D MMM')
