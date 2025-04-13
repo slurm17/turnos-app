@@ -2,7 +2,7 @@
 
 Esta aplicación tiene como objetivo recordarles a nuestros clientes el turno para que vuelvan a nuestro local.
 
-La idea surgió a partir de una charla que tuve con mi peluquero el la cual sus clientes le decían que les recuerden el turno, pero él entre anotar el número, recordar el turno y sus otros compromisos no lograba hacer esto de manera eficiente.
+La idea surgió a partir de una charla que tuve con mi peluquero en la cual sus clientes le decían que les recuerde el próximo turno, pero él entre anotar el número, recordar el turno y sus otros compromisos no lograba hacer esto de manera eficiente.
 
 La aplicación no guarda ningún número de teléfono ni dato personal, los datos solo están en tu dispositivo.
 
