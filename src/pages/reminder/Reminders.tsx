@@ -1,10 +1,10 @@
 import { Alert, Tab, Tabs } from '@mui/material'
 import { useReminderActions } from '@/hooks/useReminderActions'
 import { useReminderStore } from '@/store'
-import ReminderList from './reminderList/ReminderList'
 import { PageWithOptions } from '@/components'
 import { useMemo, useState } from 'react'
 import { DateUtils } from '@/utils'
+import ReminderList from './components/reminderList/ReminderList'
 
 const Reminders = () => {
   const actions = useReminderActions()

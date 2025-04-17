@@ -1,3 +1,3 @@
 export { default as WhatsAppButton } from './WhatsAppButton'
-export { default as AcceptCancelButtons } from './AceptCancelButtons'
-export { default as OnDeleteIconButton } from './OnDeleteIconButton'
+export { default as AcceptCancelButtons } from './AcceptCancelButtons'
+export { default as AbsoluteIconButton } from './AbsoluteIconButton'

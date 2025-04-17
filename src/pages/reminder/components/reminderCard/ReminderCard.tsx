@@ -20,7 +20,10 @@ const ReminderCard = ({ name, phone, date, id }: Reminder) => {
         }}>
           <ReminderInfo name={name} phone={phone} date={date} />
           <WhatsAppButton text='Enviar mensaje' phone={phone}/>
-          <DeleteButton onDelete={onDelete}/>
+          <DeleteButton 
+            message='¿Estás seguro de eliminar este recordatorio?'  
+            onDelete={onDelete}
+          />
         </ListItemButton>
       </ListItemShadow>
     )

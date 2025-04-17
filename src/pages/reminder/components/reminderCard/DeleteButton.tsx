@@ -1,15 +1,16 @@
-import { AcceptCancelButtons } from '@/components'
-import OnDeleteIconButton from '@/components/buttons/OnDeleteIconButton'
+import { AbsoluteIconButton, AcceptCancelButtons } from '@/components'
 import { DialogCustom } from '@/styles/DailogCustom'
 import { Typography } from '@mui/material'
 import { useState } from 'react'
+import HighlightOffIcon from '@mui/icons-material/HighlightOff'
 
 interface DeleteButtonProps {
     onDelete: () => void;
+    message: string
 }
-const DeleteButton = ({ onDelete }: DeleteButtonProps) => {
+const DeleteButton = ({ onDelete, message }: DeleteButtonProps) => {
     const [open, setOpen] = useState(false)
-    const handleClickIconButton = () => {
+    const onClick = () => {
         setOpen(true)   
     }
     const onCancel = () => {
@@ -21,9 +22,13 @@ const DeleteButton = ({ onDelete }: DeleteButtonProps) => {
     }
   return (
     <>
-        <OnDeleteIconButton handleClickIconButton={handleClickIconButton}/>
+        <AbsoluteIconButton 
+            onClick={onClick} 
+            icon={HighlightOffIcon}
+            color='error'
+        />
         <DialogCustom open={open} onClose={onCancel}>
-            <Typography align='center'>¿Estás seguro de eliminar este recordatorio?</Typography>
+            <Typography sx={{ margin: '.7rem' }} align='center'>{message}</Typography>
             <AcceptCancelButtons onCancel={onCancel} onAccept={onAccept}/>
         </DialogCustom>
     </>

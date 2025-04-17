@@ -1,11 +1,12 @@
+// Los botones se posicionan en la parte inferior derecha del componente padre
 import { Button, Stack } from '@mui/material'
 
-interface AceptCancelButtonsProps {
+interface AcceptCancelButtonsProps {
     onCancel: () => void
     onAccept?: () => void
 }
 
-const AcceptCancelButtons = ({ onCancel, onAccept }: AceptCancelButtonsProps) => {
+const AcceptCancelButtons = ({ onCancel, onAccept }: AcceptCancelButtonsProps) => {
   return (
     <Stack
         spacing={2}
