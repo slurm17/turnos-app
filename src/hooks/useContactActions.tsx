@@ -6,7 +6,7 @@ export const useContactActions = () => {
   const clearContacts = useContactStore((state) => state.clearContacts)
   const navigate = useNavigate()
   const actions = [
-    { icon: PersonAddDisabled, name: 'Borrar todos', handleClick: () => clearContacts() },
+    { icon: PersonAddDisabled, name: 'Borrar todos', handleClick: clearContacts },
     { icon: PersonAdd, name: 'Añadir', handleClick: () => navigate(ROUTES.CONTACT_ADD) },
   ]
 

@@ -5,6 +5,6 @@ import ROUTES from '@/constants/routes'
 
 export const listItemsNav = [
     { text: 'Turnos', icon: DateRangeIcon, navigateTo: ROUTES.REMINDER },
-    { text: 'Contactos', icon: PersonIcon, navigateTo: ROUTES.CONTACT_LIST },
+    { text: 'Contactos', icon: PersonIcon, navigateTo: ROUTES.CONTACTS },
     { text: 'Añadir', icon: PersonAddAlt1Icon, navigateTo: ROUTES.CONTACT_ADD },
 ]

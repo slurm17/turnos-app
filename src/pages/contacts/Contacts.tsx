@@ -4,15 +4,15 @@ import { useContactStore, useReminderStore } from '@/store'
 import { ContactUtils } from '@/utils'
 import { useContactActions } from '@/hooks/useContactActions'
 import { Contact } from '@/types/Contact'
-import ContactList from './ContactList/ContactList'
 import ReminderAddModal from '@/components/reminders/ReminderAddModal'
 import { useState } from 'react'
 import { Dayjs } from 'dayjs'
 import { useNavigate } from 'react-router-dom'
 import dayjs from '@/dayjsConfig'
 import { PageWithOptions } from '@/components'
+import ContactList from './contactList/ContactList'
 
-const ListContact = () => {
+const Contacts = () => {
   const contacts  = useContactStore(state => state.contacts)
   const isContactsEmpty = ContactUtils.isContactsEmpty(contacts)
   const addReminder = useReminderStore(state => state.addReminder)
@@ -63,4 +63,4 @@ const ListContact = () => {
   )
 }
 
-export default ListContact
+export default Contacts

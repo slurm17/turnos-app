@@ -7,15 +7,9 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import { theme } from './theme/global.js'
 import 'dayjs/locale/es'
+import { updateStatusBarColor } from './theme/updateStatusBarColor.js'
 
-// Función para actualizar el theme-color
-function updateThemeColor(color: string) {
-  const metaTag = document.querySelector('meta[name="theme-color"]') || document.createElement('meta')
-  metaTag.setAttribute('name', 'theme-color')
-  metaTag.setAttribute('content', color)
-  document.head.appendChild(metaTag)
-}
-updateThemeColor(theme.palette.primary.main)
+updateStatusBarColor(theme.palette.primary.main)
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
 

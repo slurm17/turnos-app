@@ -33,7 +33,7 @@ const ContactManually = ({ addContact } : ContactManuallyProps) => {
             event.preventDefault()
             addContact({ phone: datos.phone, name: datos.name })
             handleClose()
-            navigate(ROUTES.CONTACT_LIST)
+            navigate(ROUTES.CONTACTS)
           },
         }}
       >

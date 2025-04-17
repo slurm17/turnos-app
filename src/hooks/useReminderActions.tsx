@@ -8,8 +8,8 @@ export const useReminderActions = () => {
   const navigate = useNavigate()
 
   const actions = [
-    { icon: Delete, name: 'Borrar todos', handleClick: () => clearReminder() },
-    { icon: Add, name: 'Añadir', handleClick: () => navigate(ROUTES.CONTACT_LIST) },
+    { icon: Delete, name: 'Borrar todos', handleClick: clearReminder },
+    { icon: Add, name: 'Añadir', handleClick: () => navigate(ROUTES.CONTACTS) },
   ]
 
   return actions
