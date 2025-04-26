@@ -1,11 +1,11 @@
 import { Box } from '@mui/material'
 import { handleFileUpload } from './utils/handleFileUpload'
-import { Contact } from '@/types/Contact'
+import { ContactData } from '@/types/ContactData'
 import { useRef } from 'react'
 import { ButtonShadow } from '@/styles/Shadow'
 
 interface ContactFileProps {
-    addContacts: (contacts : Contact[]) => void
+    addContacts: (contacts : ContactData[]) => void
   }
 
   

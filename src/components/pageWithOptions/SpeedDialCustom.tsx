@@ -3,10 +3,10 @@ import SpeedDial from '@mui/material/SpeedDial'
 import SpeedDialIcon from '@mui/material/SpeedDialIcon'
 import SpeedDialAction from '@mui/material/SpeedDialAction'
 import { useState } from 'react'
-import { Action } from '@/types/Action'
+import { ActionData } from '@/types/ActionData'
 
 interface SpeedDialCustomProps {
-    actions : Action[]
+    actions : ActionData[]
 }
 export default function SpeedDialCustom({ actions } : SpeedDialCustomProps) {
     const [open, setOpen] = useState(false)

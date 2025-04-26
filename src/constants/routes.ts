@@ -1,7 +1,7 @@
 enum ROUTES {
     REMINDER = '/reminder',
     REMINDER_ADD = '/reminder/add',
-    CONTACT_LIST = '/contact',
+    CONTACT = '/contact',
     CONTACT_ADD = '/contact/add'
   }
 

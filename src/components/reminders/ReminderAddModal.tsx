@@ -1,11 +1,11 @@
 import { DateCalendar } from '@mui/x-date-pickers'
-import { Contact } from '@/types/Contact'
+import { ContactData } from '@/types/ContactData'
 import { Dayjs } from 'dayjs'
 import { AcceptCancelButtons, ReminderInfo } from '@/components'
 import { DialogCustom } from '@/styles/DailogCustom'
 
 interface ReminderAddModalProps {
-  contact: Contact,
+  contact: ContactData,
   onCancel: () => void,
   onAccept: () => void,
   onDateChange: (newValue: Dayjs) => void,

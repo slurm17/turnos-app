@@ -1,11 +1,11 @@
 import React from 'react'
 import SpeedDialCustom from './SpeedDialCustom'
-import { Action } from '@/types/Action'
+import { ActionData } from '@/types/ActionData'
 import OptionsBar from './OptionsBar'
 import { Theme, useMediaQuery } from '@mui/material'
 
 interface PageWithOptionsProps {
-  actions: Action[];
+  actions: ActionData[];
   children: React.ReactNode;
 }
 

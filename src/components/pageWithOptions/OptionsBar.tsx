@@ -1,8 +1,8 @@
 import { Box, Button } from '@mui/material'
-import { Action } from '@/types/Action'
+import { ActionData } from '@/types/ActionData'
 
 interface OptionsBarProps {
-    actions : Action[],
+    actions : ActionData[],
 }
 
 const OptionsBar = ({ actions }: OptionsBarProps) => {

@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react'
-import { Contact } from '@/types/Contact'
+import { ContactData } from '@/types/ContactData'
 import { vi } from 'vitest'
 import { describe, it, expect } from 'vitest'
 import ContactList from './ContactList'
@@ -16,7 +16,7 @@ vi.mock('./ContactCard', () => ({
   }))
 
 describe('ContactList', () => {
-  const mockContacts: Contact[] = [
+  const mockContacts: ContactData[] = [
     { name: 'Lucas', phone: '3434486600' },
     { name: 'Juan', phone: '3434486601' },
   ]

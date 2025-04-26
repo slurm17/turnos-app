@@ -3,7 +3,7 @@ import ContactFile from './components/ContactFile'
 import ContactPicker from './components/ContactPicker'
 import { useContactStore } from '@/store'
 
-const AddContact = () => {
+const ContactAdd = () => {
   const addContact = useContactStore((state) => state.addContact)
   const addContacts = useContactStore((state) => state.addContacts)
 
@@ -16,4 +16,4 @@ const AddContact = () => {
   )
 }
 
-export default AddContact
+export default ContactAdd

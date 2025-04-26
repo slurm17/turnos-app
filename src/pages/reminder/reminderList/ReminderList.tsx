@@ -1,9 +1,9 @@
 import StackList from '@/styles/StackList'
-import { Reminder } from '@/types/Reminder'
+import { ReminderData } from '@/types/ReminderData'
 import ReminderCard from '../reminderCard/ReminderCard'
 
 interface ReminderListProps {
-    reminder: Reminder[]
+    reminder: ReminderData[]
 }
 
 const ReminderList = ({ reminder }: ReminderListProps) => {

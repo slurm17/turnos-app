@@ -1,6 +1,6 @@
 import { SvgIconComponent } from '@mui/icons-material'
 
-export interface Action {
+export interface ActionData {
     icon : SvgIconComponent,
     name: string,
     handleClick: () => void

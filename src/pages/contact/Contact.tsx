@@ -3,7 +3,6 @@ import ROUTES from '@/constants/routes'
 import { useContactStore, useReminderStore } from '@/store'
 import { ContactUtils } from '@/utils'
 import { useContactActions } from '@/hooks/useContactActions'
-import { Contact } from '@/types/Contact'
 import ContactList from './contactList/ContactList'
 import ReminderAddModal from '@/components/reminders/ReminderAddModal'
 import { useState } from 'react'
@@ -11,17 +10,18 @@ import { Dayjs } from 'dayjs'
 import { useNavigate } from 'react-router-dom'
 import dayjs from '@/dayjsConfig'
 import { PageWithOptions } from '@/components'
+import { ContactData } from '@/types/ContactData'
 
-const ListContact = () => {
+const Contact = () => {
   const contacts  = useContactStore(state => state.contacts)
   const isContactsEmpty = ContactUtils.isContactsEmpty(contacts)
   const addReminder = useReminderStore(state => state.addReminder)
   const actions = useContactActions()
   const navigate = useNavigate()
   const [openModal, setOpenModal] = useState(false)
-  const [contactSelected, setContactSelected] = useState<Contact>(ContactUtils.getContactEmpty())
+  const [contactSelected, setContactSelected] = useState<ContactData>(ContactUtils.getContactEmpty())
   const [selectedDate, setSelectedDate] = useState<Dayjs>(dayjs())
-  const onClickContact = (contact : Contact) => {
+  const onClickContact = (contact : ContactData) => {
     setContactSelected(contact)
     setOpenModal(true)
   }
@@ -63,4 +63,4 @@ const ListContact = () => {
   )
 }
 
-export default ListContact
+export default Contact

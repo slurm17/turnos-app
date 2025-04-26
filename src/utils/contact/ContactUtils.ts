@@ -1,13 +1,13 @@
-import { Contact } from '@/types/Contact'
+import { ContactData } from '@/types/ContactData'
 
 const ContactUtils = {
-    isContactsEmpty(contacts: Contact[]): boolean {
+    isContactsEmpty(contacts: ContactData[]): boolean {
       return contacts.length === 0
     },
-    isContactEmpty({ name }: Contact): boolean {
+    isContactEmpty({ name }: ContactData): boolean {
       return name.trim() === ''
     },
-    getContactEmpty(): Contact {
+    getContactEmpty(): ContactData {
       return {
         name: '',
         phone: ''

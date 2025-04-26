@@ -1,10 +1,10 @@
-import { Contact } from '@/types/Contact'
+import { ContactData } from '@/types/ContactData'
 import StackList from '../../../styles/StackList'
 import ContactCard from '../contactCard/ContactCard'
 
 interface ContactListProps {
-    contacts: Contact[],
-    onClickContact: (contact : Contact) => void
+    contacts: ContactData[],
+    onClickContact: (contact : ContactData) => void
 }
 
 const ContactList = ({ contacts, onClickContact }: ContactListProps) => (
