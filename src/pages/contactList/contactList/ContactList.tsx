@@ -1,6 +1,6 @@
 import { Contact } from '@/types/Contact'
 import StackList from '../../../styles/StackList'
-import ContactCard from '../ContactCard/ContactCard'
+import ContactCard from '../contactCard/ContactCard'
 
 interface ContactListProps {
     contacts: Contact[],

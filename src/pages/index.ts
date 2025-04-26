@@ -1,4 +1,4 @@
-export { default as AddContact } from './AddContact/AddContact'
-export { default as ListContact } from './ListContact/ListContact'
-export { default as NotFound } from './notFound_temp/NotFound'
-export { default as Reminder } from './reminder_temp/Reminder'
+export { default as AddContact } from './contactAdd/AddContact'
+export { default as ListContact } from './contactList/ListContact'
+export { default as NotFound } from './notFound/NotFound'
+export { default as Reminder } from './reminder/Reminder'
