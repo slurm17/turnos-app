@@ -1,4 +1,4 @@
-export { default as PageWithOptions } from './PageWithOptions/PageWithOptions'
-export { default as Layout } from './Layout/Layout'
+export { default as PageWithOptions } from './pageWithOptions/PageWithOptions'
+export { default as Layout } from './layout/Layout'
 export * from './reminders'
 export * from './buttons'

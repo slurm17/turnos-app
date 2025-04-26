@@ -1,9 +1,8 @@
 import { Outlet } from 'react-router-dom'
-import { listItemsNav } from './constants/listItemsNav'
 import DrawerNav from './components/DrawerNav'
-import BottomNav from './components/BottomNav'
 import MyAppBar from './components/MyAppBar'
-
+import BottomNav from './components/BottomNav'
+import { listItemsNav } from './constants/listItemsNav'
 
 const Layout = () => {
   return (
