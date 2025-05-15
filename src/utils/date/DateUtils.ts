@@ -1,18 +1,18 @@
 import { Dayjs } from 'dayjs'
-import dayjs from '@/dayjsConfig'
+import dayjs from '../../dayjsConfig'
+
+const getRemainingDaysCount = (date: Dayjs): number => {
+  return date.diff(dayjs().startOf('day'), 'day')
+}
 
 const DateUtils = {
   formatDDMMAAAA( date: Dayjs ){
-      if (!dayjs.isDayjs(date)) 
-        return 'date != :Dayjs'
-      return date.format('DD/MM/YYYY')
-    },
-  getRemainingDays(date: Dayjs) {
-    if(this.isExpired(date)) 
-      return 'El recordatorio ya pasó.'
-    const daysRemaining = date.diff(dayjs().startOf('day'), 'day')
-    if (daysRemaining === 0) 
-      return 'Hoy'
+    return date.format('DD/MM/YYYY')
+  },
+  getRemainingDaysMessage(date: Dayjs): string {
+    const daysRemaining = getRemainingDaysCount(date)
+    if (daysRemaining < 0) return 'El recordatorio ya pasó.'
+    if (daysRemaining === 0) return 'Hoy'
     return `${daysRemaining} días`
   },
   getfullDate(date: Dayjs){

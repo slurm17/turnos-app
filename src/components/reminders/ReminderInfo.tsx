@@ -13,7 +13,7 @@ const ReminderInfo = ({ name, phone, date }: ReminderInfoProps) => {
   return (
     <>
         <Typography>{`${name || 'name'} (${phone || 'phone'})`}</Typography>
-        <Typography>{`${DateUtils.getfullDate(date)} (${DateUtils.getRemainingDays(date)})`}</Typography>
+        <Typography>{`${DateUtils.getfullDate(date)} (${DateUtils.getRemainingDaysMessage(date)})`}</Typography>
     </>
   )
 }

@@ -30,3 +30,10 @@ describe('ContactUtils - isContactEmpty', () => {
         expect(ContactUtils.isContactEmpty(contact)).toBeFalsy()
     })
 })
+
+describe('ContactUtils - getContactEmpty', () => {
+    test('debe devolver un contacto vacío', () => {
+        const contact : ContactData = { name: '', phone: '' }
+        expect(ContactUtils.getContactEmpty()).toEqual(contact)
+    })
+})
