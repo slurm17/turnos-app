@@ -3,25 +3,18 @@ import { useReminderActions } from '@/hooks/useReminderActions'
 import { useReminderStore } from '@/store'
 import ReminderList from './reminderList/ReminderList'
 import { PageWithOptions } from '@/components'
-import { useMemo, useState } from 'react'
-import { DateUtils } from '@/utils'
+import { useSeparateReminders } from './hooks/useSeparateReminders'
+import { useState } from 'react'
 
 const Reminder = () => {
-  const actions = useReminderActions()
-  const reminder = useReminderStore((state) => state.reminder)
-  const [activeTab, setActiveTab] = useState(0)
-  const isReminderEmpty = !reminder.length
-	const [activeReminders, expiredReminders] = useMemo(() => {
-    if (isReminderEmpty) return [[], []]
-    return [
-      reminder.filter(rem => !DateUtils.isExpired(rem.date)),
-      reminder.filter(rem => DateUtils.isExpired(rem.date))
-    ]
-  }, [reminder, isReminderEmpty])
-
-  const handleTabChange = (_: React.SyntheticEvent, newValue: number) => {
-	setActiveTab(newValue)
-  }
+	const [activeTab, setActiveTab] = useState(0)
+	const actions = useReminderActions()
+	const reminder = useReminderStore((state) => state.reminder)
+	const { activeReminders, expiredReminders } = useSeparateReminders({reminder})
+	const isReminderEmpty = !reminder.length
+	const handleTabChange = (_: React.SyntheticEvent, newValue: number) => {
+		setActiveTab(newValue)
+	}
 
   return (
 	<PageWithOptions actions={actions}>
