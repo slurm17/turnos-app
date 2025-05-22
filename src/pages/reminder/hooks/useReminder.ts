@@ -1,4 +1,4 @@
-import { useReminderActions } from "@/hooks/useReminderActions"
+import { useReminderActions } from "@/hooks/reminder"
 import { useReminderStore } from "@/store"
 import { DateUtils } from "@/utils"
 import { useMemo } from "react"

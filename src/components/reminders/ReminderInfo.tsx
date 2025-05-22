@@ -1,7 +1,6 @@
-import { DateUtils } from '@/utils'
+import { useReminderMessage } from '@/hooks/reminder'
 import { Typography } from '@mui/material'
 import { Dayjs } from 'dayjs'
-
 
 interface ReminderInfoProps {
   name: string,
@@ -10,10 +9,11 @@ interface ReminderInfoProps {
 }
 
 const ReminderInfo = ({ name, phone, date }: ReminderInfoProps) => {
+  const { fullDate, remainingDaysMessage } = useReminderMessage({ date })
   return (
     <>
-        <Typography>{`${name || 'name'} (${phone || 'phone'})`}</Typography>
-        <Typography>{`${DateUtils.getfullDate(date)} (${DateUtils.getRemainingDaysMessage(date)})`}</Typography>
+        <Typography>{`${name} (${phone})`}</Typography>
+        <Typography>{`${fullDate} (${remainingDaysMessage})`}</Typography>
     </>
   )
 }

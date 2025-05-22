@@ -1,4 +1,4 @@
-import { useContactActions } from "@/hooks/useContactActions"
+import { useContactActions } from "@/hooks/contact"
 import { useContactStore } from "@/store"
 import { ContactUtils } from "@/utils"
 
