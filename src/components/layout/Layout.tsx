@@ -1,10 +1,14 @@
 import { Outlet } from 'react-router-dom'
+
 import DrawerNav from './components/DrawerNav'
 import MyAppBar from './components/MyAppBar'
 import BottomNav from './components/BottomNav'
 import { listItemsNav } from './constants/listItemsNav'
 
+import { useIsPwaInstalled } from '@/hooks/useIsPwaInstalled'
+
 const Layout = () => {
+  const installed = useIsPwaInstalled()
   return (
     <>
       <DrawerNav listItemsNav={listItemsNav}/>
@@ -13,7 +17,7 @@ const Layout = () => {
         <main>
           <Outlet/>
         </main>
-        <BottomNav listItemsNav={listItemsNav}/>
+        {installed && <BottomNav listItemsNav={listItemsNav}/>}
       </div>
     </>
   )

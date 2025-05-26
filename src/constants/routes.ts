@@ -1,8 +1,8 @@
-enum ROUTES {
-    REMINDER = '/reminder',
-    REMINDER_ADD = '/reminder/add',
-    CONTACT = '/contact',
-    CONTACT_ADD = '/contact/add'
-  }
+const routes = {
+  REMINDER: '/reminder',
+  CONTACT: '/contact',
+  CONTACT_ADD: '/contact/add',
+  MENU: '/menu'
+}
 
-export default ROUTES
+export default routes

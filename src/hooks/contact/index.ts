@@ -1,1 +1,1 @@
-export {useContactActions} from './useContactActions'
+export { useContactActions } from './useContactActions'

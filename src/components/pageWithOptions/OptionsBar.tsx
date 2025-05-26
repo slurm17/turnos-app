@@ -1,4 +1,5 @@
 import { Box, Button } from '@mui/material'
+
 import { ActionData } from '@/types/ActionData'
 
 interface OptionsBarProps {

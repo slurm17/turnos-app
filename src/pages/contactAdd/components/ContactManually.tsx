@@ -1,17 +1,17 @@
-import { ButtonShadow } from '@/styles/Shadow'
-import { ContactData } from '@/types/ContactData'
 import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField } from '@mui/material'
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import ROUTES from '@/constants/routes'
+
+import { ContactData } from '@/types/ContactData'
+import { ButtonShadow } from '@/styles/Shadow'
 import { AcceptCancelButtons } from '@/components'
+import { useAppNavigation } from '@/hooks/navigate/useAppNavigation'
 interface ContactManuallyProps {
   addContact: ({ name, phone }: {name: string, phone: string}) => void
 }
 
 const ContactManually = ({ addContact } : ContactManuallyProps) => {
   const [open, setOpen] = useState<boolean>(false)
-  const navigate = useNavigate()
+  const navigate = useAppNavigation()
   const [datos, setDatos] = useState<ContactData>({
     name: '',
     phone: ''
@@ -33,7 +33,7 @@ const ContactManually = ({ addContact } : ContactManuallyProps) => {
             event.preventDefault()
             addContact({ phone: datos.phone, name: datos.name })
             handleClose()
-            navigate(ROUTES.CONTACT)
+            navigate.goToContact()
           },
         }}
       >

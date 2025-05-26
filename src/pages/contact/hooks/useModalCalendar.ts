@@ -1,15 +1,15 @@
-import ROUTES from "@/constants/routes"
-import { useReminderStore } from "@/store"
-import { ContactData } from "@/types/ContactData"
-import { Dayjs } from "dayjs"
-import { useNavigate } from "react-router-dom"
+import { Dayjs } from 'dayjs'
+
+import { useReminderStore } from '@/store'
+import { ContactData } from '@/types/ContactData'
+import { useAppNavigation } from '@/hooks/navigate/useAppNavigation'
 
 interface Props {
     contact: ContactData,
     setOpen: (open: boolean) => void
 }
-const useModalCalendar = ({contact, setOpen}: Props) => {
-    const navigate = useNavigate()
+const useModalCalendar = ({ contact, setOpen }: Props) => {
+    const navigate = useAppNavigation()
     const addReminder = useReminderStore(state => state.addReminder)
     const onAccept = (date : Dayjs) => {
         addReminder({ 
@@ -17,10 +17,10 @@ const useModalCalendar = ({contact, setOpen}: Props) => {
         phone: contact.phone, 
         date,
         })
-        navigate(ROUTES.REMINDER)
+        navigate.goToReminder()
     }
     const onCancel = () => setOpen(false)
-  return {onAccept, onCancel}
+  return { onAccept, onCancel }
 }
 
 export default useModalCalendar

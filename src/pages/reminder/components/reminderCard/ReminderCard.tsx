@@ -1,9 +1,11 @@
 import { ListItemButton } from '@mui/material'
+
+import DeleteButton from './DeleteButton'
+
 import { ReminderData } from '@/types/ReminderData'
 import { ListItemShadow } from '@/styles/Shadow'
 import { ReminderInfo, WhatsAppButton } from '@/components'
 import { useReminderStore } from '@/store'
-import DeleteButton from './DeleteButton'
 
 const ReminderCard = ({ name, phone, date, id }: ReminderData) => {
     const deleteReminder = useReminderStore((state) => state.deleteReminder)

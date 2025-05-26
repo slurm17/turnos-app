@@ -1,8 +1,9 @@
+import { Typography } from '@mui/material'
+import { useState } from 'react'
+
 import { AcceptCancelButtons } from '@/components'
 import OnDeleteIconButton from '@/components/buttons/OnDeleteIconButton'
 import { DialogCustom } from '@/styles/DailogCustom'
-import { Typography } from '@mui/material'
-import { useState } from 'react'
 
 interface DeleteButtonProps {
     onDelete: () => void;

@@ -1,5 +1,6 @@
-import { ListItemShadow } from '@/styles/Shadow'
 import { ListItemButton, ListItemText } from '@mui/material'
+
+import { ListItemShadow } from '@/styles/Shadow'
 
 interface ContactCardProps {
     phone: string,

@@ -1,4 +1,5 @@
 import { Dayjs } from 'dayjs'
+
 import { ContactData } from './ContactData'
 
 export interface ReminderData extends ContactData {

@@ -1,9 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.js'
 import { CssBaseline, ThemeProvider } from '@mui/material'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
+
+import App from './App.js'
 import { theme } from './theme/global.js'
 import 'dayjs/locale/es'
 import { updateThemeColor } from './utils/updateThemeColor'

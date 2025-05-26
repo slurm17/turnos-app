@@ -1,6 +1,8 @@
-import { ContactData } from '@/types/ContactData'
-import ContactUtils from './ContactUtils'
 import { describe, test, expect } from 'vitest'
+
+import ContactUtils from './ContactUtils'
+
+import { ContactData } from '@/types/ContactData'
 
 describe('ContactUtils - isContactsEmpty', () => {
     test('debe devolver true si el arreglo de contactos está vacío', () => {

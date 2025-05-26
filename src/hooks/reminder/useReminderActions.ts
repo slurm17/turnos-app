@@ -1,15 +1,17 @@
-import { useReminderStore } from '@/store'
-import { useNavigate } from 'react-router-dom'
-import ROUTES from '@/constants/routes'
 import { Delete, Add } from '@mui/icons-material'
+
+import { useAppNavigation } from '../navigate/useAppNavigation'
+
+import { useReminderStore } from '@/store'
+
 
 export const useReminderActions = () => {
   const clearReminder = useReminderStore((state) => state.clearReminder)
-  const navigate = useNavigate()
+  const navigate = useAppNavigation()
 
   const actions = [
-    { icon: Delete, name: 'Borrar todos', handleClick: () => clearReminder() },
-    { icon: Add, name: 'Añadir', handleClick: () => navigate(ROUTES.CONTACT) },
+    { icon: Delete, name: 'Borrar todos', handleClick: clearReminder },
+    { icon: Add, name: 'Añadir', handleClick: () => navigate.goToContact },
   ]
 
   return actions

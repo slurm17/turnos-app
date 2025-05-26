@@ -1,8 +1,9 @@
-import { ReminderData, ReminderDataWithoutId } from '@/types/ReminderData'
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 import { v4 as uuidv4 } from 'uuid'
 import { Dayjs } from 'dayjs'
+
+import { ReminderData, ReminderDataWithoutId } from '@/types/ReminderData'
 import dayjs from '@/dayjsConfig'
 // Definición de la interfaz para el estado del store
 interface ReminderState {

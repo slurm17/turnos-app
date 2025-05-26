@@ -1,50 +1,68 @@
 module.exports = {
   root: true,
-  env: { 
-    browser: true, 
+  env: {
+    browser: true,
     es2021: true,
-    'vitest/globals': true
+  },
+  globals: {
+    vi: 'readonly',
+    describe: 'readonly',
+    it: 'readonly',
+    expect: 'readonly',
+    beforeEach: 'readonly',
+    afterEach: 'readonly',
+    beforeAll: 'readonly',
+    afterAll: 'readonly',
+    test: 'readonly',
   },
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react-hooks/recommended',
     'plugin:import/typescript',
-    'plugin:vitest/recommended'
+    'plugin:react/recommended'
+
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
   plugins: [
+    'react',
     'react-refresh',
     '@typescript-eslint',
     'import',
     'unused-imports',
     'vitest',
   ],
+  settings: {
+    react: {
+      version: 'detect'
+    }
+  },
   rules: {
     'react-refresh/only-export-components': [
       'warn',
       { allowConstantExport: true },
     ],
-    "semi": ["error", "never"],
-    "quotes": ["error", "single"],
-    "object-curly-spacing": ["error", "always"],
-    "space-infix-ops": "error",
-    "key-spacing": [
-      "error",
+    '@typescript-eslint/semi': ['error', 'never'],
+    'quotes': ['error', 'single'],
+    'object-curly-spacing': ['error', 'always'],
+    'space-infix-ops': 'error',
+    'react/react-in-jsx-scope': 'off',
+    'key-spacing': [
+      'error',
       {
-        "beforeColon": false,
-        "afterColon": true
-      }
+        beforeColon: false,
+        afterColon: true,
+      },
     ],
-    // Elimina imports no usados
     'unused-imports/no-unused-imports': 'warn',
-    // Ordena y agrupa imports
-    'import/order': ['warn', {
-      groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
-      'newlines-between': 'always',
-    }],
-    // Permite funciones flecha anónimas en tests
+    'import/order': [
+      'warn',
+      {
+        groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
+        'newlines-between': 'always',
+      },
+    ],
     'vitest/no-identical-title': 'error',
     'vitest/no-disabled-tests': 'warn',
     'vitest/no-focused-tests': 'error',

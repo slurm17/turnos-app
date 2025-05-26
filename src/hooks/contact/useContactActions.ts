@@ -1,13 +1,15 @@
-import { useContactStore } from '@/store'
-import { useNavigate } from 'react-router-dom'
 import { PersonAddDisabled, PersonAdd } from '@mui/icons-material'
-import ROUTES from '@/constants/routes'
+
+import { useAppNavigation } from '../navigate/useAppNavigation'
+
+import { useContactStore } from '@/store'
+
 export const useContactActions = () => {
   const clearContacts = useContactStore((state) => state.clearContacts)
-  const navigate = useNavigate()
+  const navigate = useAppNavigation()
   const actions = [
-    { icon: PersonAddDisabled, name: 'Borrar todos', handleClick: () => clearContacts() },
-    { icon: PersonAdd, name: 'Añadir', handleClick: () => navigate(ROUTES.CONTACT_ADD) },
+    { icon: PersonAddDisabled, name: 'Borrar todos', handleClick: clearContacts },
+    { icon: PersonAdd, name: 'Añadir', handleClick: navigate.goToContactAdd },
   ]
 
   return actions

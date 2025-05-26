@@ -1,9 +1,10 @@
 import React from 'react'
-import SpeedDialCustom from './SpeedDialCustom'
-import { ActionData } from '@/types/ActionData'
-import OptionsBar from './OptionsBar'
 import { Theme, useMediaQuery } from '@mui/material'
-import { useIsPwaInstalled } from '@/hooks/useIsPwaInstalled'
+
+import SpeedDialCustom from './SpeedDialCustom'
+import OptionsBar from './OptionsBar'
+
+import { ActionData } from '@/types/ActionData'
 
 interface PageWithOptionsProps {
   actions: ActionData[];
@@ -12,12 +13,11 @@ interface PageWithOptionsProps {
 
 const PageWithOptions = ({ actions, children } : PageWithOptionsProps) => {
   const isMobile = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'))
-  const installed = useIsPwaInstalled()
   return (
     <>
       {!isMobile && <OptionsBar actions={actions}/>}
       {children}
-      {isMobile && installed && <SpeedDialCustom actions={actions} />}
+      {isMobile && <SpeedDialCustom actions={actions} />}
     </>
   )
 }

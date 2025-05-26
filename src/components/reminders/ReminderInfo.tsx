@@ -1,6 +1,7 @@
-import { useReminderMessage } from '@/hooks/reminder'
 import { Typography } from '@mui/material'
 import { Dayjs } from 'dayjs'
+
+import { useReminderMessage } from '@/hooks/reminder'
 
 interface ReminderInfoProps {
   name: string,

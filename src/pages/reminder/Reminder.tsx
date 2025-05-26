@@ -1,8 +1,10 @@
 import { Alert, Tab, Tabs } from '@mui/material'
-import ReminderList from './components/reminderList/ReminderList'
-import { PageWithOptions } from '@/components'
 import { useState } from 'react'
+
+import ReminderList from './components/reminderList/ReminderList'
 import useReminder from './hooks/useReminder'
+
+import { PageWithOptions } from '@/components'
 
 const Reminder = () => {
 	const [activeTab, setActiveTab] = useState(0)

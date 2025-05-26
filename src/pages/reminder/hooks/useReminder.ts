@@ -1,7 +1,8 @@
-import { useReminderActions } from "@/hooks/reminder"
-import { useReminderStore } from "@/store"
-import { DateUtils } from "@/utils"
-import { useMemo } from "react"
+import { useMemo } from 'react'
+
+import { useReminderActions } from '@/hooks/reminder'
+import { useReminderStore } from '@/store'
+import { DateUtils } from '@/utils'
 
 const useReminder = () => {
     const actions = useReminderActions()
@@ -14,7 +15,7 @@ const useReminder = () => {
             ]
         }, [reminders])
 	const hasReminders = !!reminders.length
-    return {hasReminders, actions, activeRemindersList, expiredRemindersList}
+    return { hasReminders, actions, activeRemindersList, expiredRemindersList }
 }
 
 export default useReminder

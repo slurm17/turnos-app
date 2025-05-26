@@ -1,6 +1,7 @@
-import { ContactData } from '@/types/ContactData'
 import { create } from 'zustand'
 import { persist, createJSONStorage } from 'zustand/middleware'
+
+import { ContactData } from '@/types/ContactData'
 
 // Definición de la interfaz para el estado del store
 interface ContactState {

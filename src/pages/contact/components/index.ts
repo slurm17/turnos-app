@@ -1,1 +1,1 @@
-export {default as ContactList} from './contactList/ContactList'
+export { default as ContactList } from './contactList/ContactList'

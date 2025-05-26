@@ -1,8 +1,10 @@
 import Drawer from '@mui/material/Drawer'
 import Toolbar from '@mui/material/Toolbar'
 import Divider from '@mui/material/Divider'
-import DrawerItem from './DrawerItem'
+
 import { ListItemsNav } from '../types/ListItemsNav'
+
+import DrawerItem from './DrawerItem'
 interface DrawerNavProps {
   listItemsNav : ListItemsNav[],
 }
