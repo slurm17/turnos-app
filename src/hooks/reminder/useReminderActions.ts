@@ -11,7 +11,7 @@ export const useReminderActions = () => {
 
   const actions = [
     { icon: Delete, name: 'Borrar todos', handleClick: clearReminder },
-    { icon: Add, name: 'Añadir', handleClick: () => navigate.goToContact },
+    { icon: Add, name: 'Añadir', handleClick: navigate.goToContact },
   ]
 
   return actions

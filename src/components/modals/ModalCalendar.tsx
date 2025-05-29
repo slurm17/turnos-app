@@ -12,10 +12,12 @@ interface ModalCalendarProps {
   onCancel: () => void,
   onAccept: ( date : Dayjs) => void,
   open: boolean,
+  // Útil para testear o establecer una fecha por defecto.
+  initialDate?: Dayjs
 }
 
 const ModalCalendar = ( { contact, ...props } : ModalCalendarProps) => { 
-  const [selectedDate, setSelectedDate] = useState<Dayjs>(dayjs())
+  const [selectedDate, setSelectedDate] = useState<Dayjs>(props?.initialDate ?? dayjs())
   const onDateChange = (newDate : Dayjs) => {
     setSelectedDate(newDate)
   }
