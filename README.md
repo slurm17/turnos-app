@@ -1,17 +1,17 @@
 # Aplicación para recordar turnos a través de Whatsapp
 
-Esta aplicación tiene como objetivo recordarles a nuestros clientes el turno para que vuelvan a nuestro local.
+Esta aplicación tiene como finalidad ayudar a recordar los turnos, enviando recordatorios a través de WhatsApp, para que los clientes vuelvan a nuestro local sin olvidarse.
 
-La idea surgió a partir de una charla que tuve con mi peluquero en la cual sus clientes le decían que les recuerde el próximo turno, pero él entre anotar el número, recordar el turno y sus otros compromisos no lograba hacer esto de manera eficiente.
+La idea nació durante una charla con mi peluquero, quien me comentaba que muchos de sus clientes le pedían que les recuerde sus próximos turnos. Sin embargo, entre anotar los números, recordar las fechas y atender otros compromisos, se le hacía muy difícil hacerlo de forma eficiente.
 
-La aplicación no guarda ningún número de teléfono ni dato personal, los datos solo están en tu dispositivo.
+Cabe destacar que la aplicación no almacena números de teléfono ni ningún dato personal en servidores externos. Toda la información se guarda únicamente en el dispositivo del usuario.
 
 
 <img src="https://i.ibb.co/B5WTqKNq/Whats-App-Image-2025-03-06-at-16-33-55.jpg" alt="pantalla celular" width="300" />
 
 ## Uso
 
-Para hacer uso de esta aplicación solo tiene que ingresar a https://turnos-ap.netlify.app/ y agregar un turno (se recomienda instalar la aplicación para una mejor experiencia).
+Para hacer uso de esta aplicación solo tenés que ingresar a https://turnos-ap.netlify.app/ y agregar un turno (se recomienda instalar la aplicación para una mejor experiencia).
 
 La aplicación puede ser utilizada en:
   - Teléfono celular como una aplicación móvil (recomendada).
