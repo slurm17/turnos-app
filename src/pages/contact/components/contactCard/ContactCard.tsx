@@ -1,6 +1,5 @@
-import { ListItemButton, ListItemText } from '@mui/material'
-
-import { ListItemShadow } from '@/styles/Shadow'
+import { ListItemButton, ListItemIcon, ListItemText } from '@mui/material'
+import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 
 interface ContactCardProps {
     phone: string,
@@ -10,11 +9,23 @@ interface ContactCardProps {
 
 const ContactCard = ({ name, phone, handleClick }: ContactCardProps) => {
   return (
-    <ListItemShadow onClick={handleClick}>
-      <ListItemButton>
-        <ListItemText primary={`${name} ${phone}` }/>
-      </ListItemButton>
-    </ListItemShadow>
+    <ListItemButton onClick={handleClick}
+      sx={{
+        borderRadius: '4px',
+        backgroundColor: 'white',
+        boxShadow: '0px 0px 15px 0px rgba(0,0,0,0.1)',
+        paddingBottom: 0,
+        paddingTop: 0,
+    }}>
+      <ListItemIcon>
+        <AccountCircleIcon fontSize='large' />
+      </ListItemIcon>
+      <ListItemText
+        primary={`${name}`}
+        secondary={`${phone}`}
+        sx={{ whiteSpace: 'pre-line' }}
+      />
+    </ListItemButton>
   )
 }
 

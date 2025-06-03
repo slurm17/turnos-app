@@ -18,10 +18,10 @@ describe('DateUtils - getRemainingDaysMessage', () => {
         const resultado = DateUtils.getRemainingDaysMessage(fecha)
         expect(resultado).toBe('Hoy')
     })
-    test('debe devolver "El recordatorio ya pasó." si la fecha que recibe es anterior a la de hoy ', () => {
+    test('debe devolver "Vencido." si la fecha que recibe es anterior a la de hoy ', () => {
         const fecha = dayjs('2025-01-01')
         const resultado = DateUtils.getRemainingDaysMessage(fecha)
-        expect(resultado).toBe('El recordatorio ya pasó.')
+        expect(resultado).toBe('Vencido')
     })
     test('debe devolver la cantidad de días que faltan para llegar al dia de hoy', () => {
         const fecha = dayjs().add(5, 'day')

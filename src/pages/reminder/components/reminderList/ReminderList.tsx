@@ -1,6 +1,7 @@
+import { List } from '@mui/material'
+
 import ReminderCard from '../reminderCard/ReminderCard'
 
-import StackList from '@/styles/StackList'
 import { ReminderData } from '@/types/ReminderData'
 
 interface ReminderListProps {
@@ -9,11 +10,11 @@ interface ReminderListProps {
 
 const ReminderList = ({ reminder }: ReminderListProps) => {
   return (
-    <StackList>
+    <List> 
         {reminder.map((reminder, i) => 
-            <ReminderCard key={i} {...reminder} />
+          <ReminderCard key={i} {...reminder} />
         )}
-    </StackList>
+    </List>
   )
 }
 

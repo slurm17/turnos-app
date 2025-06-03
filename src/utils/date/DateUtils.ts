@@ -12,8 +12,9 @@ const DateUtils = {
   },
   getRemainingDaysMessage(date: Dayjs): string {
     const daysRemaining = getRemainingDaysCount(date)
-    if (daysRemaining < 0) return 'El recordatorio ya pasó.'
+    if (this.isExpired(date)) return 'Vencido'
     if (daysRemaining === 0) return 'Hoy'
+    if (daysRemaining === 1) return 'Mañana'
     return `${daysRemaining} días`
   },
   getfullDate(date: Dayjs){
