@@ -12,9 +12,9 @@ const drawerWidthMd = 240
 const drawerWidthSm = 190
 const DrawerNav = ({ listItemsNav/*, ...props*/ } : DrawerNavProps) => {
   return (
-      <Drawer
+    <Drawer
         // {...props}
-        sx={{
+      sx={{
           display: { xs: 'none', sm: 'block' },
           width: { sm: drawerWidthSm, md: drawerWidthMd },
           flexShrink: 0,
@@ -23,13 +23,18 @@ const DrawerNav = ({ listItemsNav/*, ...props*/ } : DrawerNavProps) => {
             boxSizing: 'border-box',
           },
         }}
-        variant="permanent"
-        anchor="left"
-        >
-        <Toolbar />
-        <Divider />
-        {listItemsNav.map((item, i) => (
-          <DrawerItem key={i} text={item.text} icon={item.icon} navigateTo={item.navigateTo} />
+      variant="permanent"
+      anchor="left"
+      >
+      <Toolbar />
+      <Divider />
+      {listItemsNav.map((item, i) => (
+        <DrawerItem 
+          key={i} 
+          text={item.text} 
+          icon={item.icon} 
+          navigateTo={item.navigateTo} 
+          />
         ))}
     </Drawer>
   )

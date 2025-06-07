@@ -13,8 +13,8 @@ const ReminderInfo = ({ name, phone, date }: ReminderInfoProps) => {
   const { fullDate, remainingDaysMessage } = useReminderMessage({ date })
   return (
     <>
-        <Typography>{`${name} (${phone})`}</Typography>
-        <Typography>{`${fullDate} (${remainingDaysMessage})`}</Typography>
+      <Typography>{`${name} (${phone})`}</Typography>
+      <Typography>{`${fullDate} (${remainingDaysMessage})`}</Typography>
     </>
   )
 }

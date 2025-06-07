@@ -9,15 +9,15 @@ interface ReminderTextProps {
 const ReminderText = ({ name, phone, date }: ReminderTextProps) => {
   return (
     <>
-        <Typography align='left'>
-            {name}
-        </Typography >
-        <Typography align='left'>
-            {phone}
-        </Typography>
-        <Typography align='left'>
-            {date}
-        </Typography>
+      <Typography align='left'>
+        {name}
+      </Typography >
+      <Typography align='left'>
+        {phone}
+      </Typography>
+      <Typography align='left'>
+        {date}
+      </Typography>
     </>
   )
 }

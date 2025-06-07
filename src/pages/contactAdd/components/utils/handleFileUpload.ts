@@ -20,33 +20,33 @@ const parseVcf = (vcfData: string): Contact[] => {
   const vCards = vcfData.split('BEGIN:VCARD').slice(1) // Divide por cada vCard
   const contactList: Contact[] = []
   vCards.forEach((vCard, index) => {
-      const nameMatch = vCard.match(/FN;CHARSET=UTF-8;ENCODING=QUOTED-PRINTABLE:(.+)/) || vCard.match(/FN:(.+)/)
-      const phoneMatch = vCard.match(/TEL.*:(.+)/)
-      const decodedName = nameMatch
-        ? decodeQuotedPrintable(nameMatch[1].trim())
-        : 'Sin Nombre'
-      phoneMatch?.[1]?.trim() && 
+    const nameMatch = vCard.match(/FN;CHARSET=UTF-8;ENCODING=QUOTED-PRINTABLE:(.+)/) || vCard.match(/FN:(.+)/)
+    const phoneMatch = vCard.match(/TEL.*:(.+)/)
+    const decodedName = nameMatch
+      ? decodeQuotedPrintable(nameMatch[1].trim())
+      : 'Sin Nombre'
+    phoneMatch?.[1]?.trim() && 
       contactList.push({
         id: `${index}`,
         name: decodedName,
         phone: phoneMatch?.[1]?.trim()
       })
-    })
-    return contactList
-  }
+  })
+  return contactList
+}
 
-  export const handleFileUpload = (
-    event: React.ChangeEvent<HTMLInputElement>,
-    setContacts : (contacts : Contact[]) => void
-  ) => {
-    const file = event.target.files?.[0]
-    if (file) {
-      const reader = new FileReader()
-      reader.onload = (e) => {
-        const text = e.target?.result as string
-        const parsedContacts = parseVcf(text)
-        setContacts(parsedContacts)
-      }
-      reader.readAsText(file)
+export const handleFileUpload = (
+  event: React.ChangeEvent<HTMLInputElement>,
+  setContacts : (contacts : Contact[]) => void
+) => {
+  const file = event.target.files?.[0]
+  if (file) {
+    const reader = new FileReader()
+    reader.onload = (e) => {
+      const text = e.target?.result as string
+      const parsedContacts = parseVcf(text)
+      setContacts(parsedContacts)
     }
+    reader.readAsText(file)
   }
+}

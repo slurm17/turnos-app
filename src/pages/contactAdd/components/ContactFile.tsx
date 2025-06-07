@@ -11,26 +11,26 @@ interface ContactFileProps {
   }
 
   
-  const ContactFile = ({ addContacts }: ContactFileProps) => {
-    const fileInputRef = useRef<HTMLInputElement>(null)
-    const handleFileClick = () => {
-        fileInputRef.current && fileInputRef.current.click()
-      }
+const ContactFile = ({ addContacts }: ContactFileProps) => {
+  const fileInputRef = useRef<HTMLInputElement>(null)
+  const handleFileClick = () => {
+    fileInputRef.current && fileInputRef.current.click()
+  }
   return (
     <>
-        <Box 
-            sx={{ display: 'none' }}
-            component={'input'}
-            type='file' 
-            ref={fileInputRef}
-            accept=".vcf"
-            onChange={(e) => handleFileUpload(e,addContacts)}
+      <Box 
+        sx={{ display: 'none' }}
+        component={'input'}
+        type='file' 
+        ref={fileInputRef}
+        accept=".vcf"
+        onChange={(e) => handleFileUpload(e,addContacts)}
         />
-        <ButtonShadow 
-          fullWidth 
-          onClick={handleFileClick}>
-            Importar archivo .vcf
-        </ButtonShadow>
+      <ButtonShadow 
+        fullWidth 
+        onClick={handleFileClick}>
+        Importar archivo .vcf
+      </ButtonShadow>
     </>
   )
 }

@@ -7,15 +7,15 @@ interface OnCloseButtonProps {
 const OnDeleteIconButton = ({ handleClickIconButton }: OnCloseButtonProps) => {
   return (
     <IconButton 
-        sx={{
+      sx={{
             position: 'absolute',
             top: 0,
             right: 0,
             padding: 0.5
         }}
-        onClick={handleClickIconButton}
+      onClick={handleClickIconButton}
         >
-        <HighlightOffIcon color='error'/>
+      <HighlightOffIcon color='error'/>
     </IconButton>
   )
 }

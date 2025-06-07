@@ -8,27 +8,27 @@ interface AceptCancelButtonsProps {
 const AcceptCancelButtons = ({ onCancel, onAccept }: AceptCancelButtonsProps) => {
   return (
     <Stack
-        spacing={2}
-        direction="row"
-        sx={{
+      spacing={2}
+      direction="row"
+      sx={{
           width: '100%',
           justifyContent: 'flex-end',
           alignItems: 'center',
           mt: 3
         }}
       >
-        <Button
-          onClick={onCancel}
+      <Button
+        onClick={onCancel}
           >
-          {'Cancelar'}
-        </Button>
-        <Button
-          type='submit'
-          onClick={onAccept}
+        {'Cancelar'}
+      </Button>
+      <Button
+        type='submit'
+        onClick={onAccept}
           >
-          {'Aceptar'}
-        </Button>
-      </Stack>
+        {'Aceptar'}
+      </Button>
+    </Stack>
   )
 }
 

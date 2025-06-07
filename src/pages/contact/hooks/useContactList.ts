@@ -6,11 +6,11 @@ interface Props {
 }
 
 const useContactList = ({ setOpen, setContact }: Props) => {
-    const onClickContact = (contact : ContactData) => {
-        setContact(contact)
-        setOpen(true)
-    }
-    return { onClickContact }
+  const onClickContact = (contact : ContactData) => {
+    setContact(contact)
+    setOpen(true)
+  }
+  return { onClickContact }
 }
 
 export default useContactList

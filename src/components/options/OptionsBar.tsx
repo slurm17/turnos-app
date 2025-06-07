@@ -14,15 +14,15 @@ const OptionsBar = ({ actions }: OptionsBarProps) => {
         flexWrap: 'wrap',
         gap: '0.5rem'
     }}>
-        {actions.map(({ name, icon: Icon, handleClick }, i) => (
-            <Button 
-                onClick={handleClick}
-                variant='contained' 
-                key={i}
-                startIcon={<Icon/>}
+      {actions.map(({ name, icon: Icon, handleClick }, i) => (
+        <Button 
+          onClick={handleClick}
+          variant='contained' 
+          key={i}
+          startIcon={<Icon/>}
             >
-                {name}
-            </Button>
+          {name}
+        </Button>
         ))}
     </Box>
   )

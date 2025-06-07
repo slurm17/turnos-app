@@ -23,13 +23,13 @@ const ModalCalendar = ( { contact, ...props } : ModalCalendarProps) => {
   }
   return (
     <DialogCustom open={props.open} onClose={props.onCancel}>
-        <DateCalendar
-            disablePast
-            value={selectedDate} 
-            onChange={onDateChange}
+      <DateCalendar
+        disablePast
+        value={selectedDate} 
+        onChange={onDateChange}
         />
-        <ReminderInfo name={contact.name} phone={contact.phone} date={selectedDate}/>
-        <AcceptCancelButtons onCancel={props.onCancel} onAccept={() => props.onAccept(selectedDate)}/>
+      <ReminderInfo name={contact.name} phone={contact.phone} date={selectedDate}/>
+      <AcceptCancelButtons onCancel={props.onCancel} onAccept={() => props.onAccept(selectedDate)}/>
     </DialogCustom>
   )
 }

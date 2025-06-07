@@ -15,13 +15,13 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <LocalizationProvider
-          dateAdapter={AdapterDayjs}
-          adapterLocale={'es'}
+      <CssBaseline />
+      <LocalizationProvider
+        dateAdapter={AdapterDayjs}
+        adapterLocale={'es'}
         >
-          <App />
-        </LocalizationProvider>
+        <App />
+      </LocalizationProvider>
     </ThemeProvider>
   </React.StrictMode>,
 )

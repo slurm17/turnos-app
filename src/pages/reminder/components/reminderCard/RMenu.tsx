@@ -9,13 +9,13 @@ interface RMenuProps {
 
 export default function RMenu({ open, anchorEl, handleClose, children }:RMenuProps) {
   return (
-      <Menu
-        anchorEl={anchorEl}
-        id="account-menu"
-        open={open}
-        onClose={handleClose}
-        onClick={handleClose}
-        slotProps={{
+    <Menu
+      anchorEl={anchorEl}
+      id="account-menu"
+      open={open}
+      onClose={handleClose}
+      onClick={handleClose}
+      slotProps={{
           paper: {
             elevation: 0,
             sx: {
@@ -43,10 +43,10 @@ export default function RMenu({ open, anchorEl, handleClose, children }:RMenuPro
             },
           },
         }}
-        transformOrigin={{ horizontal: 'right', vertical: 'top' }}
-        anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+      transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+      anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
-        {children}
-      </Menu>
+      {children}
+    </Menu>
   )
 }

@@ -5,18 +5,18 @@ interface MyStackProps extends StackProps {
 }
 
 const StackList = ({ children, ...props } : MyStackProps ) => ( 
-    <Stack 
-        component={'ul'} 
-        spacing={1.5}
-        sx={{
+  <Stack 
+    component={'ul'} 
+    spacing={1.5}
+    sx={{
             listStyleType: 'none', // Ocultar los bullets
             p: 0,
             m: 0,
         }}
-        {...props}
+    {...props}
     >
-        {children}
-    </Stack>
+    {children}
+  </Stack>
 )
 
 export default StackList

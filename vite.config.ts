@@ -11,36 +11,36 @@ export default defineConfig({
     visualizer({ open: true }),
     react(), 
     VitePWA({
-    registerType: 'autoUpdate',
-    injectRegister: false,
+      registerType: 'autoUpdate',
+      injectRegister: false,
   
-    pwaAssets: {
-      disabled: false,
-      config: true,
-    },
+      pwaAssets: {
+        disabled: false,
+        config: true,
+      },
 
-    manifest: {
-      name: 'Turnos App',
-      short_name: 'Turnos',
-      description: 'App destinada a la organizacion de negocios',
-      theme_color: '#f3f3f3',
-    },
+      manifest: {
+        name: 'Turnos App',
+        short_name: 'Turnos',
+        description: 'App destinada a la organizacion de negocios',
+        theme_color: '#f3f3f3',
+      },
 
-    workbox: {
-      skipWaiting: true,
-      globPatterns: ['**/*.{js,css,html,svg,png,ico}'],
-      cleanupOutdatedCaches: true,
-      clientsClaim: true,
-    },
+      workbox: {
+        skipWaiting: true,
+        globPatterns: ['**/*.{js,css,html,svg,png,ico}'],
+        cleanupOutdatedCaches: true,
+        clientsClaim: true,
+      },
 
-    devOptions: {
-      enabled: false,
-      navigateFallback: 'index.html',
-      suppressWarnings: true,
-      type: 'module',
-    },
+      devOptions: {
+        enabled: false,
+        navigateFallback: 'index.html',
+        suppressWarnings: true,
+        type: 'module',
+      },
 
-  })],
+    })],
 
   server: {
     hmr: true, // Asegúrate de que HMR esté habilitado (Hot Module Replacement)

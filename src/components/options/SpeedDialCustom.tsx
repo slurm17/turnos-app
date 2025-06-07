@@ -10,33 +10,33 @@ interface SpeedDialCustomProps {
     actions : ActionData[]
 }
 export default function SpeedDialCustom({ actions } : SpeedDialCustomProps) {
-    const [open, setOpen] = useState(false)
-    const handleOpen = () => setOpen(true)
-    const handleClose = () => setOpen(false)
-    return (
-        <>
-            <Backdrop open={open} />
-            <SpeedDial
-                ariaLabel="SpeedDial tooltip example"
-                sx={{ position: 'fixed', bottom: 80, right: 25 }}
-                icon={<SpeedDialIcon />}
-                onClose={handleClose}
-                onOpen={handleOpen}
-                open={open}
+  const [open, setOpen] = useState(false)
+  const handleOpen = () => setOpen(true)
+  const handleClose = () => setOpen(false)
+  return (
+    <>
+      <Backdrop open={open} />
+      <SpeedDial
+        ariaLabel="SpeedDial tooltip example"
+        sx={{ position: 'fixed', bottom: 80, right: 25 }}
+        icon={<SpeedDialIcon />}
+        onClose={handleClose}
+        onOpen={handleOpen}
+        open={open}
             >
-                {actions.map(({ name, icon: Icon, handleClick }) => (
-                <SpeedDialAction
-                    key={name}
-                    icon={<Icon/>}
-                    tooltipTitle={name}
-                    tooltipOpen
-                    onClick={()=>{
+        {actions.map(({ name, icon: Icon, handleClick }) => (
+          <SpeedDialAction
+            key={name}
+            icon={<Icon/>}
+            tooltipTitle={name}
+            tooltipOpen
+            onClick={()=>{
                         handleClick() 
                         handleClose()
                     }}
                 />
                 ))}
-            </SpeedDial>
-        </>
-    )
+      </SpeedDial>
+    </>
+  )
 }

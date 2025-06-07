@@ -11,8 +11,8 @@ interface ReminderListProps {
 const ReminderList = ({ reminder }: ReminderListProps) => {
   return (
     <List> 
-        {reminder.map((reminder, i) => 
-          <ReminderCard key={i} {...reminder} />
+      {reminder.map((reminder, i) => 
+        <ReminderCard key={i} {...reminder} />
         )}
     </List>
   )

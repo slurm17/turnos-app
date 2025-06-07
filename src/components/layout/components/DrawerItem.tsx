@@ -9,19 +9,19 @@ interface DrawerItemProps {
 }
 
 const DrawerItem = ({ text, icon: Icon, navigateTo }: DrawerItemProps) => {
-    const navigate = useNavigate()
-    return (
-        <List>
-            <ListItem disablePadding>
-                <ListItemButton onClick={() => navigate(navigateTo)}>
-                    <ListItemIcon>
-                        <Icon/>
-                    </ListItemIcon>
-                    <ListItemText primary={text} />
-                </ListItemButton>
-            </ListItem>
-        </List>
-    )
+  const navigate = useNavigate()
+  return (
+    <List>
+      <ListItem disablePadding>
+        <ListItemButton onClick={() => navigate(navigateTo)}>
+          <ListItemIcon>
+            <Icon/>
+          </ListItemIcon>
+          <ListItemText primary={text} />
+        </ListItemButton>
+      </ListItem>
+    </List>
+  )
 }
 
 export default DrawerItem

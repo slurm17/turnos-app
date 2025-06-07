@@ -12,9 +12,9 @@ interface ReminderState {
   clearReminder: () => void;
   deleteReminder: (id: string) => void;
 }
- const sortDates = (a: Dayjs, b: Dayjs) => {
-    return a.valueOf() - b.valueOf()
-  }
+const sortDates = (a: Dayjs, b: Dayjs) => {
+  return a.valueOf() - b.valueOf()
+}
 
 // Creación del store con persistencia
 const useReminderStore = create<ReminderState>()(

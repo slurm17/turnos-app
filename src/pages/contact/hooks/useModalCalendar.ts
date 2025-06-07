@@ -9,17 +9,17 @@ interface Props {
     setOpen: (open: boolean) => void
 }
 const useModalCalendar = ({ contact, setOpen }: Props) => {
-    const navigate = useAppNavigation()
-    const addReminder = useReminderStore(state => state.addReminder)
-    const onAccept = (date : Dayjs) => {
-        addReminder({ 
-        name: contact.name, 
-        phone: contact.phone, 
-        date,
-        })
-        navigate.goToReminder()
-    }
-    const onCancel = () => setOpen(false)
+  const navigate = useAppNavigation()
+  const addReminder = useReminderStore(state => state.addReminder)
+  const onAccept = (date : Dayjs) => {
+    addReminder({ 
+      name: contact.name, 
+      phone: contact.phone, 
+      date,
+    })
+    navigate.goToReminder()
+  }
+  const onCancel = () => setOpen(false)
   return { onAccept, onCancel }
 }
 

@@ -6,11 +6,11 @@ const Menu = () => {
 
   return (
     <div>
-    {listItemsNav.map((item, i) => (
-      <>
-        <DrawerItem key={i} text={item.text} icon={item.icon} navigateTo={item.navigateTo} />
-      </>
-    ))}
+      {listItemsNav.map((item, i) => (
+        <>
+          <DrawerItem key={i} text={item.text} icon={item.icon} navigateTo={item.navigateTo} />
+        </>
+      ))}
     </div>
   )
 }

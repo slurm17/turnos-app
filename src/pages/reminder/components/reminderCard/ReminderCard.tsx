@@ -31,8 +31,8 @@ const ReminderCard = ({ name, phone, date, id }: ReminderData) => {
     return window.open(`https://wa.me/${phone}`)
   }
 
-    return (
-      <>
+  return (
+    <>
       <RListItem
         secondaryAction={
           <>
@@ -61,8 +61,8 @@ const ReminderCard = ({ name, phone, date, id }: ReminderData) => {
       >
         <RMenuItem onClick={onDelete} text='Borrar' icon={DeleteIcon} />
       </RMenu>
-      </>
-    )
+    </>
+  )
 }
 
 export default ReminderCard

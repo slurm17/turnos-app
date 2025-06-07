@@ -13,15 +13,15 @@ const handleClickSendMessage = (phone : string) => {
 const WhatsAppButton = ({ phone, text } : WhatsAppButtonProps) => {
   return (
     <Button
-        onClick={() => handleClickSendMessage(phone)}
-        size='small'
-        sx={{
+      onClick={() => handleClickSendMessage(phone)}
+      size='small'
+      sx={{
             padding: '5px 17px',
             color: '#fff',
             backgroundColor: '#4FCE5D',
             borderRadius: '5px',
         }}
-        endIcon={<WhatsAppIcon fontSize={'small'}/>}
+      endIcon={<WhatsAppIcon fontSize={'small'}/>}
     >   {text}
     </Button>
   )
