@@ -1,5 +1,5 @@
 import { createTheme } from '@mui/material/styles'
-const brkptsValues = {
+const bktValues = {
   xs: 0,
   sm: 600,
   md: 950,
@@ -22,11 +22,11 @@ export const theme = createTheme({
   },
   breakpoints: {
     values: {
-      xs: brkptsValues.xs,
-      sm: brkptsValues.sm,
-      md: brkptsValues.md,
-      lg: brkptsValues.lg,
-      xl: brkptsValues.xl
+      xs: bktValues.xs,
+      sm: bktValues.sm,
+      md: bktValues.md,
+      lg: bktValues.lg,
+      xl: bktValues.xl
     }
   },
   components: {
@@ -49,16 +49,7 @@ export const theme = createTheme({
           justifyContent: 'center',
           flexDirection: 'column',
           alignItems: 'center',
-        },
-        main: {
-          display: 'flex',
-          flexDirection: 'column',
-          textAlign: 'center',
-          padding: '0.75rem 1rem 70px 1rem',
-          width: '100%',
-          maxWidth: brkptsValues.sm,
-          gap: '.8rem'
-        },
+        }
       },
     },
   },

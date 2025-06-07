@@ -5,10 +5,10 @@ const isStandalone = () => {
 }
 
 export function useIsPwaInstalled(): boolean {
-  const [installed, setInstalled] = useState(false)
+  const [isPwaInstalled, setIsPwaInstalled] = useState(false)
   useEffect(() => {
-    setInstalled(isStandalone())
+    setIsPwaInstalled(isStandalone())
   }, [])
 
-  return installed
+  return isPwaInstalled
 }
