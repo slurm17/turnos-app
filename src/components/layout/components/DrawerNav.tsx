@@ -3,11 +3,11 @@ import Toolbar from '@mui/material/Toolbar'
 import Divider from '@mui/material/Divider'
 import { List } from '@mui/material'
 
-import { ListItemsNav } from '../types/ListItemsNav'
+import { ListItemsNavData } from '../types/ListItemsNavData'
 
 import DrawerItem from '@/components/drawer/DrawerItem'
 interface DrawerNavProps {
-  listItemsNav : ListItemsNav[],
+  listItemsNav : ListItemsNavData[],
 }
 const drawerWidthMd = 240
 const drawerWidthSm = 190
