@@ -1,10 +1,11 @@
 import Drawer from '@mui/material/Drawer'
 import Toolbar from '@mui/material/Toolbar'
 import Divider from '@mui/material/Divider'
+import { List } from '@mui/material'
 
 import { ListItemsNav } from '../types/ListItemsNav'
 
-import DrawerItem from './DrawerItem'
+import DrawerItem from '@/components/drawer/DrawerItem'
 interface DrawerNavProps {
   listItemsNav : ListItemsNav[],
 }
@@ -28,14 +29,16 @@ const DrawerNav = ({ listItemsNav/*, ...props*/ } : DrawerNavProps) => {
       >
       <Toolbar />
       <Divider />
-      {listItemsNav.map((item, i) => (
-        <DrawerItem 
-          key={i} 
-          text={item.text} 
-          icon={item.icon} 
-          navigateTo={item.navigateTo} 
-          />
-        ))}
+      <List>
+        {listItemsNav.map((item, i) => (
+          <DrawerItem 
+            key={i} 
+            text={item.text} 
+            icon={item.icon} 
+            navigateTo={item.navigateTo} 
+        />
+      ))}
+      </List>
     </Drawer>
   )
 }

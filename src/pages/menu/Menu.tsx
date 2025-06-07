@@ -1,17 +1,25 @@
 
-import DrawerItem from '@/components/layout/components/DrawerItem'
-import { listItemsNav } from '@/components/layout/constants/listItemsNav' 
+import { List } from '@mui/material'
+
+import DrawerItem from '@/components/drawer/DrawerItem'
+import { listItemsNav } from '@/constants/listItemsNav' 
 
 const Menu = () => {
 
   return (
-    <div>
+    <List sx={{
+      padding: 0,
+      '& li': { 
+        padding: 0,
+        '& .MuiListItemButton-root': {
+          paddingLeft: 0
+        }
+      },
+    }}>
       {listItemsNav.map((item, i) => (
-        <>
-          <DrawerItem key={i} text={item.text} icon={item.icon} navigateTo={item.navigateTo} />
-        </>
+        <DrawerItem key={i} text={item.text} icon={item.icon} navigateTo={item.navigateTo} />
       ))}
-    </div>
+    </List>
   )
 }
 

@@ -1,5 +1,5 @@
 import { SvgIconComponent } from '@mui/icons-material'
-import { List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material'
+import { ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 
 interface DrawerItemProps {
@@ -11,7 +11,7 @@ interface DrawerItemProps {
 const DrawerItem = ({ text, icon: Icon, navigateTo }: DrawerItemProps) => {
   const navigate = useNavigate()
   return (
-    <List>
+    <>
       <ListItem disablePadding>
         <ListItemButton onClick={() => navigate(navigateTo)}>
           <ListItemIcon>
@@ -20,7 +20,7 @@ const DrawerItem = ({ text, icon: Icon, navigateTo }: DrawerItemProps) => {
           <ListItemText primary={text} />
         </ListItemButton>
       </ListItem>
-    </List>
+    </>
   )
 }
 
