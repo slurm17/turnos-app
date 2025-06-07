@@ -5,7 +5,10 @@ import Toolbar from '@mui/material/Toolbar'
 
 import MenuButton from './MenuButton'
 
-export default function MyAppBar() {
+import { useIsPwaInstalled } from '@/hooks/useIsPwaInstalled'
+
+const MyAppBar = () => {
+  const isPwaInstalled = useIsPwaInstalled()
   return (
     <Box sx={{ flexGrow: 1, width: '100%' }}>
       <AppBar sx={{
@@ -15,9 +18,11 @@ export default function MyAppBar() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Turnos App
           </Typography>
-          <MenuButton/>
+          {!isPwaInstalled && <MenuButton/>}
         </Toolbar>
       </AppBar>
     </Box>
   )
 }
+
+export default MyAppBar
