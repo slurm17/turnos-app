@@ -1,1 +1,1 @@
-export { default as ModalCalendar } from './ModalCalendar'
+export { default as ModalCalendar } from './modalCalendar/ModalCalendar'

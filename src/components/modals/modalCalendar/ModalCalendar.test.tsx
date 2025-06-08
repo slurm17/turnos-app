@@ -6,7 +6,7 @@ import userEvent from '@testing-library/user-event'
 import dayjs from 'dayjs'
 
 import { ContactData } from '@/types/ContactData'
-import ModalCalendar from '@/components/modals/ModalCalendar'
+import ModalCalendar from '@/components/modals/modalCalendar/ModalCalendar'
 
 const mockContact : ContactData = { name: 'John Doe', phone: '123-456-7890' }
 

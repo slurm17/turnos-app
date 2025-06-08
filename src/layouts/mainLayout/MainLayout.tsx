@@ -8,7 +8,7 @@ import Main from './components/Main'
 import { useIsPwaInstalled } from '@/hooks/useIsPwaInstalled'
 import { listItemsNav } from '@/constants/listItemsNav'
 
-const Layout = () => {
+const MainLayout = () => {
   const isPwaInstalled = useIsPwaInstalled()
   return (
     <>
@@ -24,4 +24,4 @@ const Layout = () => {
   )
 }
 
-export default Layout
+export default MainLayout

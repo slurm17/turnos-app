@@ -1,8 +1,8 @@
 import React from 'react'
 import { Theme, useMediaQuery } from '@mui/material'
 
-import SpeedDialCustom from './SpeedDialCustom'
-import OptionsBar from './OptionsBar'
+import OptionsBar from './components/OptionsBar'
+import SpeedDialCustom from './components/SpeedDialCustom'
 
 import { ActionData } from '@/types/ActionData'
 
