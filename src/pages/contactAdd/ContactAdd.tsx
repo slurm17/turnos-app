@@ -1,6 +1,6 @@
 import ContactManually from './ContactManually/ContactManually'
 import ContactFile from './components/ContactFile'
-import ContactPicker from './components/ContactPicker'
+import ContactPicker from './ContactPicker/ContactPicker'
 
 import { useContactStore } from '@/store'
 

@@ -1,8 +1,10 @@
+import { useAppNavigation } from '@/hooks/navigate/useAppNavigation'
 import { ButtonShadow } from '@/styles/Shadow'
 interface ContactPickerProps {
   addContact: ({ name, phone }: {name: string, phone: string}) => void
 }
 const ContactPicker = ({ addContact } : ContactPickerProps) => {
+  const navigate = useAppNavigation()
   const pickContact = async (): Promise<void> => {
     if ('contacts' in navigator && 'ContactsManager' in window) {
       try {
@@ -11,7 +13,10 @@ const ContactPicker = ({ addContact } : ContactPickerProps) => {
           ['name', 'tel'],
           { multiple: true }
         )
+        alert('Contacto seleccionado: ' + contacts[0]?.name[0] + ' - ' + contacts[0]?.tel[0])
+        alert('Contacto seleccionado: ' + contacts[1]?.name[0] + ' - ' + contacts[1]?.tel[0])
         addContact({ name: contacts[0]?.name[0], phone: contacts[0]?.tel[0] })
+        navigate.goToContact()
         // Procesa los contactos seleccionados según tus necesidades
       } catch (error) {
         console.error('Error al seleccionar contacto:', error)
