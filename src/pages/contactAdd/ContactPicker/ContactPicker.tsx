@@ -13,8 +13,6 @@ const ContactPicker = ({ addContact } : ContactPickerProps) => {
           ['name', 'tel'],
           { multiple: true }
         )
-        alert('Contacto seleccionado: ' + contacts[0]?.name[0] + ' - ' + contacts[0]?.tel[0])
-        alert('Contacto seleccionado: ' + contacts[1]?.name[0] + ' - ' + contacts[1]?.tel[0])
         addContact({ name: contacts[0]?.name[0], phone: contacts[0]?.tel[0] })
         navigate.goToContact()
         // Procesa los contactos seleccionados según tus necesidades
