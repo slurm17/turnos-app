@@ -13,11 +13,9 @@ const ContactPicker = ({ addContact } : ContactPickerProps) => {
           ['name', 'tel'],
           { multiple: true }
         )
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        contacts.map((contact: any, i : number) => {
-          addContact({ name: contact[i]?.name[0], phone: contact[i]?.tel[0] })
-        })
-        // Redirige a la página de contactos después de seleccionar
+        alert('Contacto seleccionado: ' + contacts[0]?.name[0] + ' - ' + contacts[0]?.tel[0])
+        alert('Contacto seleccionado: ' + contacts[1]?.name[0] + ' - ' + contacts[1]?.tel[0])
+        addContact({ name: contacts[0]?.name[0], phone: contacts[0]?.tel[0] })
         navigate.goToContact()
         // Procesa los contactos seleccionados según tus necesidades
       } catch (error) {
