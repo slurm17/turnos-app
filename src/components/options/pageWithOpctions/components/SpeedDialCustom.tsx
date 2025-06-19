@@ -15,7 +15,10 @@ export default function SpeedDialCustom({ actions } : SpeedDialCustomProps) {
   const handleOpen = () => setOpen(true)
   const handleClose = () => setOpen(false)
   const isPwaInstalled = useIsPwaInstalled()
-  
+  const handleActionClick = (actionHandler: () => void) => {
+    actionHandler()
+    handleClose()
+  }
   return (
     <>
       <Backdrop open={open} />
@@ -37,12 +40,9 @@ export default function SpeedDialCustom({ actions } : SpeedDialCustomProps) {
             icon={<Icon/>}
             tooltipTitle={name}
             tooltipOpen
-            onClick={()=>{
-                        handleClick() 
-                        handleClose()
-                    }}
-                />
-                ))}
+            onClick={()=>handleActionClick(handleClick)}
+            />
+        ))}
       </SpeedDial>
     </>
   )

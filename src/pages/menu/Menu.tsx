@@ -2,7 +2,7 @@
 import { List } from '@mui/material'
 
 import DrawerItem from '@/components/drawer/DrawerItem'
-import { listItemsNav } from '@/constants/listItemsNav' 
+import { listItemsNav } from '@/constants/navigation/listItemsNav' 
 
 const Menu = () => {
 

@@ -6,7 +6,7 @@ import BottomNav from './components/BottomNav'
 import Main from './components/Main'
 
 import { useIsPwaInstalled } from '@/hooks/useIsPwaInstalled'
-import { listItemsNav } from '@/constants/listItemsNav'
+import { listItemsNav } from '@/constants/navigation/listItemsNav'
 
 const MainLayout = () => {
   const isPwaInstalled = useIsPwaInstalled()

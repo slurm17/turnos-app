@@ -1,4 +1,4 @@
-import ContactManually from './components/ContactManually'
+import ContactManually from './ContactManually/ContactManually'
 import ContactFile from './components/ContactFile'
 import ContactPicker from './components/ContactPicker'
 
@@ -11,7 +11,7 @@ const ContactAdd = () => {
   return (
     <>
       <ContactPicker addContact={addContact}/>
-      <ContactManually addContact={addContact}/>
+      <ContactManually/>
       <ContactFile addContacts={addContacts}/>
     </>
   )
