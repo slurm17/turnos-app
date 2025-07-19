@@ -3,6 +3,7 @@ import { Alert } from '@mui/material'
 
 import { ContactList } from './components'
 import { useContact, useContactList, useModalCalendar } from './hooks'
+import InfoEmptyContacts from './components/contactMessageInfo/InfoEmptyContacts'
 
 import { ContactData } from '@/types/ContactData'
 import { ContactUtils } from '@/utils'
@@ -19,7 +20,7 @@ const Contact = () => {
   return (
     <PageWithOptions actions={actions}>
       {isContactsEmpty && 
-      <Alert severity="info">{'No hay contactos agregados'}</Alert>
+      <InfoEmptyContacts />
         }
       {!isContactsEmpty &&
         <>

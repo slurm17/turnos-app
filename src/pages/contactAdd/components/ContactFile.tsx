@@ -29,7 +29,7 @@ const ContactFile = ({ addContacts }: ContactFileProps) => {
       <ButtonShadow 
         fullWidth 
         onClick={handleFileClick}>
-        Importar archivo .vcf
+        Importar archivo desde tu teléfono (.vcf)
       </ButtonShadow>
     </>
   )

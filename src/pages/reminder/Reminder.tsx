@@ -3,6 +3,7 @@ import { useState } from 'react'
 
 import ReminderList from './components/reminderList/ReminderList'
 import useReminder from './hooks/useReminder'
+import InfoEmptyReminders from './components/reminderMessage/InfoEmptyReminders'
 
 import { PageWithOptions } from '@/components'
 
@@ -25,7 +26,7 @@ const Reminder = () => {
         {activeTab === 0 && (
 						activeRemindersList.length > 0 ? 
 							(<ReminderList reminder={activeRemindersList} />) : 
-							(<Alert severity="info">No hay recordatorios activos</Alert>)
+							(<InfoEmptyReminders />)
 					)}
         {activeTab === 1 && (
 						expiredRemindersList.length > 0 && <ReminderList reminder={expiredRemindersList} />
